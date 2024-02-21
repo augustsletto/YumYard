@@ -28,7 +28,7 @@ class OrderModel(models.Model):
     street = models.CharField(max_length=50, blank=True)
     city = models.CharField(max_length=50, blank=True)
     state = models.CharField(max_length=15, blank=True)
-    zip_cope = models.IntegerField(blank=True, null=True)
+    zip_code = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return f'Order: {self.created_on.strftime("%b %d %I: %M %p")}'
