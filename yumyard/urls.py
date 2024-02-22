@@ -25,6 +25,7 @@ from customerview.views import Index, About, Order, OrderConfirmation, OrderPayC
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('restaurant/', include('restaurantview.urls')),
     path('', Index.as_view(), name='index'),
     path('about/', About.as_view(), name="about"),
     path('order/', Order.as_view(), name="order"),

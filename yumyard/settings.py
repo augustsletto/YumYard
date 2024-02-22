@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'customerview',
     'restaurantview',
     'crispy_forms',
+    'crispy_bootstrap4',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -63,7 +64,7 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
+
 
 
 MIDDLEWARE = [
@@ -167,6 +168,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 ACCOUNT_ADAPTER = 'restaurantview.account_adapter.NoNewUsersAccountAdapter'
-
+LOGIN_REDIRECT_URL = 'dashboard'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
