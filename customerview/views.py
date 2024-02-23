@@ -3,33 +3,15 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.db.models import Q
 from django.core.mail import send_mail
-from .models import MenuItem, Category, OrderModel
-from .forms import ContactForm
+from .models import MenuItem, Category, OrderModel, Restaurant, Menu
+
 
 
 class Index(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'customerview/index.html')
 
-class Contact(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'customerview/contact.html')
 
-
-    def contact(request):
-        if request.method == 'POST':
-            form = ContactForm(request.POST)
-            if form.is_valid():
-                name = form.cleaned_data['name']
-                email = form.cleaned_data['email']
-                subject = form.cleaned_data['subject']
-                message = form.cleaned_data['message']
-                # Send email
-                send_mail(subject, message, email, ['your_email@example.com'])
-                return redirect('contact_success')  # Redirect to a success page
-        else:
-            form = ContactForm()
-        return render(request, 'contact.html', {'form': form})
 
 
 
@@ -187,3 +169,30 @@ class MenuSearch(View):
         }
 
         return render(request, 'customerview/menu.html', context)
+
+
+
+from .forms import RestaurantForm, MenuForm
+
+def add_restaurant(request):
+    if request.method == 'POST':
+        form = RestaurantForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index')  # Anpassa redirect till önskad vy
+    else:
+        form = RestaurantForm()
+    return render(request, 'customerview/add_restaurant.html', {'form': form})
+
+def add_menu(request, restaurant_id):
+    restaurant = Restaurant.objects.get(id=restaurant_id)
+    if request.method == 'POST':
+        form = MenuForm(request.POST)
+        if form.is_valid():
+            menu = form.save(commit=False)
+            menu.restaurant = restaurant
+            menu.save()
+            return redirect('index')  # Anpassa redirect till önskad vy
+    else:
+        form = MenuForm()
+    return render(request, 'customerview/add_menu.html', {'form': form, 'restaurant': restaurant})

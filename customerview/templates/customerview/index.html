@@ -1,16 +1,107 @@
 {% extends 'customerview/base.html' %}
 
 {% block content %}
-<div class="container mb-5">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
-            <h1>Online Food Delivery Service</h1>
-        </div>
+<style>
+    /* Anpassade stilar för att matcha Foodoras design */
+    .hero-section {
+        background-color: #f8f9fa;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        color: #000;
+        font-size: 48px;
+        font-weight: bold;
+    }
+
+    .hero-section p {
+        color: #6c757d;
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .featured-restaurants {
+        background-color: #fff;
+        padding: 100px 0;
+    }
+
+    .restaurant-card {
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .restaurant-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .restaurant-card img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .restaurant-card .card-body {
+        padding: 20px;
+    }
+
+    .restaurant-card h3 {
+        color: #000;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .restaurant-card p {
+        color: #6c757d;
+        font-size: 16px;
+    }
+</style>
+
+<div class="hero-section">
+    <div class="container">
+        <h1>Welcome to Our Food Delivery Service</h1>
+        <p>Order from your favorite restaurants and enjoy delicious meals delivered to your doorstep.</p>
+        <a href="{% url 'order' %}" class="btn btn-primary btn-lg">Order Now</a>
     </div>
-    <div class="row justify-content-center mt-1">
-        <div class="card col-md-5 col-sm-12 offset-md-1 p-4 text-center">
-            <h2>Place an order!</h2>
-            <a href="{% url 'order' %}" class="btn btn-outline-green">Order Now!</a>
+</div>
+
+<div class="featured-restaurants">
+    <div class="container">
+        <h2 class="mb-4">Featured Restaurants</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card restaurant-card">
+                    <img src="/path/to/restaurant1.jpg" class="card-img-top" alt="Restaurant 1">
+                    <div class="card-body">
+                        <h3>Restaurant 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="btn btn-outline-primary">View Menu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card restaurant-card">
+                    <img src="/path/to/restaurant2.jpg" class="card-img-top" alt="Restaurant 2">
+                    <div class="card-body">
+                        <h3>Restaurant 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="btn btn-outline-primary">View Menu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card restaurant-card">
+                    <img src="/path/to/restaurant3.jpg" class="card-img-top" alt="Restaurant 3">
+                    <div class="card-body">
+                        <h3>Restaurant 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="#" class="btn btn-outline-primary">View Menu</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
