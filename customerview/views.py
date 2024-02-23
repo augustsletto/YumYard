@@ -42,9 +42,9 @@ class Order(View):
     def post(self, request, *args, **kwargs):
         name = request.POST.get('name')
         email = request.POST.get('email')
+        phone_number = request.POST.get('phone_number')
         street = request.POST.get('street')
         city = request.POST.get('city')
-        state = request.POST.get('state')
         zip_code = request.POST.get('zip')
 
         order_items = {
@@ -74,9 +74,9 @@ class Order(View):
             price=price,
             name=name,
             email=email,
+            phone_number=phone_number,
             street=street,
             city=city,
-            state=state,
             zip_code=zip_code
         )
         order.items.add(*item_ids)

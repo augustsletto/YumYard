@@ -1,8 +1,31 @@
 {% extends "account/base.html" %}
-
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Up Closed" %}{% endblock %}
+
+{% block extra_head %}
+<style>
+    .container {
+        margin-top: 50px;
+    }
+    
+    .col-12.text-center {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    
+    h1 {
+        color: #4CAF50; /* Green color */
+    }
+    
+    p {
+        color: #333; /* Dark gray color */
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+</style>
+{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -11,7 +34,12 @@
             <h1>{% trans "Sign Up Closed" %}</h1>
 
             <p>{% trans "We are sorry, but the sign up is currently closed." %}</p>
+            <p>{% trans "Registration is by invitation only, extended directly from the restaurant owner. If you've received an invitation, please proceed with registration using the provided credentials. For any inquiries or to request an invitation, kindly reach out to the restaurant owner or management. We appreciate your understanding and look forward to welcoming you soon!" %}</p>
+            <a class="btn btn-green mt-3" href="{% url 'index' %}">{% trans "Back to the home page" %}</a>
+            <p class="mt-3">{% trans "Are you a restaurant owner interested in using our services? Contact us to learn more." %}</p>
+            <a class="btn btn-light-green mt-2" href="{% url 'index' %}">{% trans "Contact Us" %}</a>
         </div>
+        
     </div>
 </div>
 {% endblock %}
