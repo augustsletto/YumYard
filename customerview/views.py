@@ -13,7 +13,7 @@ class Index(View):
 
 class Contact(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'customerview/index.html')
+        return render(request, 'customerview/contact.html')
 
 
     def contact(request):
