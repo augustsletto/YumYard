@@ -20,8 +20,15 @@
             <h5 class="pt-3"">Address Information: </h5>
             <p><span style="font-weight: 400;">Street:</span> {{ order.street }}</p>
             <p><span style="font-weight: 400;">City:</span> {{ order.city }}</p>
-            <p><span style="font-weight: 400;">State:</span> {{ order.state }}</p>
             <p><span style="font-weight: 400;">Zip Code:</span> {{ order.zip_code }}</p>
+            <hr class="border border-success">
+            <h5 class="card-title">Ordered Food:</h5>
+            {% for order in order.items.all %}
+            <p class="card-text">{{ order.name }}: ${{ order.price }}</p>
+            {% endfor %}
+            <hr class="border border-success">
+            <p class="card-text">Total Price: ${{ order.price }}</p>
+            
         </div>
         <div class="col-md-6 col-sm-12">
             <h5>Payment and Shipping Information</h5>
