@@ -18,13 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from customerview.views import Index, About, Order, OrderConfirmation, OrderPayConfirmation, Menu, MenuSearch
+from customerview.views import Index, About, Order, OrderConfirmation, OrderPayConfirmation, Menu, MenuSearch, Contact
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('contact/', Contact.as_view(), name='contact'),
     path('restaurant/', include('restaurantview.urls')),
     path('', Index.as_view(), name='index'),
     path('about/', About.as_view(), name="about"),
