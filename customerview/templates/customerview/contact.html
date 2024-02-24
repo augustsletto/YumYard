@@ -1,29 +1,76 @@
 {% extends 'customerview/base.html' %}
 
 {% block content %}
-<section class="vh-100">
-    <div class="container pt-5">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                    <div class="card-body p-5 text-center">
-                        <h3 class="mb-2">Contact Us</h3>
-                        {% if submitted %}
-                        <p class="success">Your message was submitted successfully.</p>
-                        <p class="success">Thank you</p>
-                        {% else %}
-                        <hr class="my-4">
-                        <form method="POST" novalidate>
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <hr class="my-4">
-                            <input type="submit" value="Submit" class="btn btn-primary btn-rounded">
-                        </form>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
+<style>
+    /* Adjusted styles to match the provided page */
+    .contact-section {
+        background-color: #f8f9fa;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .contact-section h2 {
+        color: #000;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .contact-form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .contact-form textarea {
+        height: 150px;
+    }
+
+    .contact-form input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #279251;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .active {
+        border-bottom: none;
+    }
+
+    .contact-form input[type="submit"]:hover {
+        background-color: #1e6c3e;
+    }
+</style>
+
+<section class="contact-section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            {% if submitted %}
+            <p class="success">Your message was submitted successfully. Thank you.</p>
+            {% else %}
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+            </form>
+            {% endif %}
         </div>
     </div>
 </section>
+
 {% endblock content %}

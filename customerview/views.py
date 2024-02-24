@@ -62,7 +62,12 @@ class Order(View):
         entres = MenuItem.objects.filter(category__name__contains='Entre')
         desserts = MenuItem.objects.filter(category__name__contains='Dessert')
         drinks = MenuItem.objects.filter(category__name__contains='Drink')
-        
+        sandwiches = MenuItem.objects.filter(category__name__contains='Sandwich')
+        salads = MenuItem.objects.filter(category__name__contains='Salad')
+        burgers = MenuItem.objects.filter(category__name__contains='Burgers')
+        sushi = MenuItem.objects.filter(category__name__contains='Sushi')
+        pasta = MenuItem.objects.filter(category__name__contains='Pasta')
+        pizza = MenuItem.objects.filter(category__name__contains='Pizza')
         
 
         # Pass into context
@@ -71,8 +76,13 @@ class Order(View):
             'entres': entres,
             'desserts': desserts,
             'drinks': drinks,
-
-        }
+            'sandwiches': sandwiches,
+            'salads': salads,
+            'burgers': burgers,
+            'sushi': sushi,
+            'pasta': pasta,
+            'pizza': pizza,
+}
 
 
         # Render into template

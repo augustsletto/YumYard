@@ -54,16 +54,14 @@
 </style>
 
 
-<nav class="navbar navbar-expand-lg navbar-dark pb-0">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="{% url 'index' %}">
-      <img src="/media/frontpage/YUMLOGO.png" class="ml-5 pl-5" alt="Yum logo" height="35px">
+      <img src="/media/frontpage/YUMLOGO.png" class="ml-5" alt="" height="25px">
     </a>
-    <button class="navbar-toggler green" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
     <div class="collapse navbar-collapse" id="navbarNav">
-      
       <ul class="navbar-nav ml-auto">
         <li class="nav-item ">
           <button class="button mr-3" data-url="{% url 'about' %}">About Us</button>
@@ -71,20 +69,19 @@
         <li class="nav-item">
           <button class="button mr-3" data-url="{% url 'contact' %}">Contact</button>
         </li>
-        {% if user.is_authenticated %}
-        <ul class="navbar-nav">
-          <li class="nav-item">
-              <button class="order-button mr-4" data-url="{% url 'dashboard' %}">Dashboard</button>
-          </li>
-        <li class="nav-item">
-          <a class="order-button ml-0 mr-5 nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-        </li>
-        </ul>
-        {% endif %}
+        
       </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <button class="order-button mr-5" data-url="{% url 'order' %}">Place an order</button>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link mr-5">
+              <i class="fas fa-shopping-cart pt-2"data-url="{% url 'cart' %}" style="color: #279251; font-size: 22px;"></i>
+          </a>
+      </li>
       
-      
-      
+      </ul>
       
     </div>
     
@@ -120,10 +117,13 @@
 </head>
 <body>
 
-<div class="navbarbot navbar pt-0 pb-0 pl-5">
+<div class="navbarbot navbar pb-0">
   
-  <a data-url="{% url 'restaurants' %}" class="nav-link ml-5 mr-5">Add to Menu</a>
-  <a data-url="{% url 'menu' %}" class="nav-link mr-auto">Edit Menu</a>
+  <a data-url="{% url 'restaurants' %}" class="nav-link ml-4">Restaurants</a>
+  <a data-url="{% url 'menu' %}" class="nav-link">Menu</a>
+  <a data-url="{% url 'contact' %}" class="nav-link mr-auto">Work With us</a>
+  
+
 </div>
 
 
@@ -167,7 +167,5 @@
 });
 
 </script>
-
-
 
 

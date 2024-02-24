@@ -13,7 +13,6 @@
         letter-spacing: 1px;
         text-decoration: none;
         color: #279251;
-        background: transparent;
         cursor: pointer;
         transition: ease-out 0.5s;
         border: 2px solid #279251;
@@ -57,15 +56,126 @@
     }
 
     .hero-section h1 {
-        color: #000;
+        color: #ffffff;
         font-size: 48px;
         font-weight: bold;
     }
 
     .hero-section p {
-        color: #6c757d;
+        color: #ffffff;
         font-size: 20px;
         margin-bottom: 40px;
+    }
+
+    
+
+    .hero-section {
+    position: relative;
+    background: url('/media/frontpage/yumdriver.jpg') center center no-repeat;
+    background-size: cover;
+    height: 400px; /* Adjust the height as needed */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 80%; /* Adjust the width as needed */
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-content .button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+a {
+    color: #279251;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button, a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #279251;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+button:hover, a.button:hover {
+    background-color: #1e6c3e;
+}
+
+
+
+
+    /* Anpassade stilar för att matcha Foodoras design */
+    .hero-section {
+        background-color: #ffffff;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        color: #ffffff;
+        font-size: 48px;
+        font-weight: bold;
+    }
+
+    .hero-section p {
+        color: #ffffff;
+        font-size: 28px;
+        margin-bottom: 40px;
+        font-family: 'Open Sans' sans-serif;
     }
 
     .featured-restaurants {
@@ -105,23 +215,62 @@
         color: #6c757d;
         font-size: 16px;
     }
+
+
+    
 </style>
 
 <div class="hero-section">
-    <img src="" alt="">
-    <div class="container">
-        <h1>Welcome to Our Food Delivery Service</h1>
-        <p>Order from your favorite restaurants and enjoy delicious meals delivered to your doorstep.</p>
+    <div class="hero-content pt-1 mt-5">
+        
+        
+        <p class="open-sans">Order from your favorite restaurants and enjoy delicious meals delivered to your doorstep.</p>
         <a href="{% url 'order' %}" class="button">Order Now</a>
     </div>
 </div>
 
+
+
 <div class="featured-restaurants">
     <div class="container">
-        <h2 class="mb-4">Featured Restaurants</h2>
-
-    
-        
+        <h2 class="mb-4">So how does it work?</h2>
+        <p>Welcome to our food delivery app! Discover how easy it is to order your favorite meals in just a few simple steps. Whether you're craving pizza, sushi, or something in between, we've got you covered. Find the restaurant you like, browse the menu, and place your order with ease. Your delicious meal will be on its way in no time!</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card restaurant-card">
+                    <img src="/media/indeximages/order.jpg" class="card-img-top" alt="Restaurant 1">
+                    <div class="card-body">
+                        <h3>Browse the Menu</h3>
+                        <p>Discover a wide range of delicious dishes. Browse through menus, read descriptions, and select your favorites with ease.</p>
+                        <a href="#" class="button">View Menu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card restaurant-card">
+                    <img src="/media/indeximages/paid.jpg" class="card-img-top" alt="Restaurant 2">
+                    <div class="card-body">
+                        <h3>Place your order</h3>
+                        <p>Ready to feast? Simply place your order, and choose your payment method. Sit back and relax while we prepare your meal for delivery.</p>
+                        
+                        
+                        <a href="#" class="button">Order Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card restaurant-card">
+                    <img src="/media/indeximages/deliver.jpg" class="card-img-top" alt="Restaurant 3">
+                    <div class="card-body">
+                        <h3>Wait and enjoy</h3>
+                        <p>Order placed? Check. Payment done? Check. Now, just sit tight and get ready to enjoy your meal.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
 {% endblock content %}
