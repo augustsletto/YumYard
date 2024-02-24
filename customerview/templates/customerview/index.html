@@ -2,7 +2,54 @@
 
 {% block content %}
 <style>
-    /* Anpassade stilar för att matcha Foodoras design */
+    
+    .button {
+        position: relative;
+        display: inline-block;
+        margin: 10px;
+        padding: 6px 15px;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: #279251;
+        background: transparent;
+        cursor: pointer;
+        transition: ease-out 0.5s;
+        border: 2px solid #279251;
+        border-radius: 15px;
+        box-shadow: inset 0 0 0 0 #279251;
+        }
+
+    .button:hover {
+        color: rgb(255, 255, 255);
+        box-shadow: inset 0 -100px 0 0 #279251;
+        }
+
+    .button:active {
+        transform: scale(0.9);
+        }
+
+    .order-button {
+        position: relative;
+        display: inline-block;
+        margin: 10px;
+        padding: 6px 15px;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: #ffffff;
+        background: #279251; /* Green Background */
+        cursor: pointer;
+        transition: ease-out 0.5s;
+        border: 2px solid #279251; /* Green Border */
+        border-radius: 15px;
+        box-shadow: inset 0 0 0 0 #279251;
+        }
+
+
+
     .hero-section {
         background-color: #f8f9fa;
         padding: 100px 0;
@@ -61,48 +108,20 @@
 </style>
 
 <div class="hero-section">
+    <img src="" alt="">
     <div class="container">
         <h1>Welcome to Our Food Delivery Service</h1>
         <p>Order from your favorite restaurants and enjoy delicious meals delivered to your doorstep.</p>
-        <a href="{% url 'order' %}" class="btn btn-primary btn-lg">Order Now</a>
+        <a href="{% url 'order' %}" class="button">Order Now</a>
     </div>
 </div>
 
 <div class="featured-restaurants">
     <div class="container">
         <h2 class="mb-4">Featured Restaurants</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card restaurant-card">
-                    <img src="/path/to/restaurant1.jpg" class="card-img-top" alt="Restaurant 1">
-                    <div class="card-body">
-                        <h3>Restaurant 1</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="#" class="btn btn-outline-primary">View Menu</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card restaurant-card">
-                    <img src="/path/to/restaurant2.jpg" class="card-img-top" alt="Restaurant 2">
-                    <div class="card-body">
-                        <h3>Restaurant 2</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="#" class="btn btn-outline-primary">View Menu</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card restaurant-card">
-                    <img src="/path/to/restaurant3.jpg" class="card-img-top" alt="Restaurant 3">
-                    <div class="card-body">
-                        <h3>Restaurant 3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="#" class="btn btn-outline-primary">View Menu</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    
+        
     </div>
 </div>
 {% endblock content %}

@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from customerview import views
 from django.conf import settings
 from django.conf.urls.static import static
-from customerview.views import Index, About, Order, OrderConfirmation, OrderPayConfirmation, Menu, MenuSearch
+from customerview.views import Index, About, Order, OrderConfirmation, OrderPayConfirmation, Menu, MenuSearch, ContactForm, Restaurants, Profile, Cart
 
 
 
@@ -26,7 +27,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('restaurant/', include('restaurantview.urls')),
+    path('contact/', views.contact, name='contact'),
     path('', Index.as_view(), name='index'),
+    path('restaurants/', Restaurants.as_view(), name='restaurants'),
+    path('profile/', Profile.as_view(), name='profile'),
+    path('cart/', Cart.as_view(), name='cart'),
     path('about/', About.as_view(), name="about"),
     path('menu/', Menu.as_view(), name="menu"),
     path('menu/search', MenuSearch.as_view(), name="menu-search"),

@@ -1,9 +1,11 @@
 import json
 from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from django.views import View
 from django.db.models import Q
 from django.core.mail import send_mail
-from .models import MenuItem, Category, OrderModel, Restaurant, Menu
+from .models import MenuItem, Category, OrderModel, Restaurant
+from .forms import ContactForm
 
 
 
@@ -14,6 +16,34 @@ class Index(View):
 
 
 
+def contact(request):
+    submitted = False
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            send_mail(cd['subject'], cd['message'], cd.get(
+                'email', 'noreply@example.com'), ['contact@yum.com'])
+
+        return HttpResponseRedirect('/contact?submitted=True')
+    else:
+        form = ContactForm()
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'customerview/contact.html',
+                  {'form': form, 'submitted': submitted})
+
+
+class Restaurants(View):
+    def get(self, request, *args, **kwargs):
+        restaurants = Restaurant.objects.all()
+
+        context = {
+            'restaurants': restaurants
+        }
+
+        return render(request, 'customerview/restaurants.html', context)
 
 
 
@@ -153,6 +183,18 @@ class Menu(View):
         return render(request, 'customerview/menu.html', context)
 
 
+class Profile(View):
+    def get(self, request, *args, **kwargs):
+
+        return render(request, 'customerview/profile.html')
+
+
+class Cart(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'customerview/cart.html')
+
+
+
 class MenuSearch(View):
     def get(self, request, *args, **kwargs):
         query = self.request.GET.get("q")
@@ -172,27 +214,3 @@ class MenuSearch(View):
 
 
 
-from .forms import RestaurantForm, MenuForm
-
-def add_restaurant(request):
-    if request.method == 'POST':
-        form = RestaurantForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('index')  # Anpassa redirect till önskad vy
-    else:
-        form = RestaurantForm()
-    return render(request, 'customerview/add_restaurant.html', {'form': form})
-
-def add_menu(request, restaurant_id):
-    restaurant = Restaurant.objects.get(id=restaurant_id)
-    if request.method == 'POST':
-        form = MenuForm(request.POST)
-        if form.is_valid():
-            menu = form.save(commit=False)
-            menu.restaurant = restaurant
-            menu.save()
-            return redirect('index')  # Anpassa redirect till önskad vy
-    else:
-        form = MenuForm()
-    return render(request, 'customerview/add_menu.html', {'form': form, 'restaurant': restaurant})

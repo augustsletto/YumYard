@@ -1,0 +1,28 @@
+{% extends 'restaurantview/base.html' %}
+
+{% block content %}
+<div class="ms-5">
+    <a href="{% url 'edit-menu' %}"><i class="fas fa-arrow-left pt-3 ml-5"> Go Back</i></a>
+</div>
+<div class="container pt-3">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title text-center">Edit Items</h3>
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-dismissible {{ message.tags }} text-center" id="msg">
+                <strong>{{ message }}</strong>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" class="btn btn-primary btn-rounded" value="Update Item">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

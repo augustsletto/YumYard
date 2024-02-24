@@ -1,0 +1,29 @@
+{% extends 'customerview/base.html' %}
+
+{% block content %}
+<section class="vh-100">
+    <div class="container pt-5">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <h3 class="mb-2">Contact Us</h3>
+                        {% if submitted %}
+                        <p class="success">Your message was submitted successfully.</p>
+                        <p class="success">Thank you</p>
+                        {% else %}
+                        <hr class="my-4">
+                        <form method="POST" novalidate>
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <hr class="my-4">
+                            <input type="submit" value="Submit" class="btn btn-primary btn-rounded">
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

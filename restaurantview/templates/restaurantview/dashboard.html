@@ -1,60 +1,183 @@
 {% extends 'restaurantview/base.html' %}
+
 {% block content %}
-    <div class="container">
-        <div class="row justify-content-center mt-3">
-            <div class="card col-md-5 mr-3 ">
-                <h4 class="text-center pt-2">Todays Total Revenue</h4>
-                <h1 class="text-center" style="color: green;">${{ total_revenue }}</h1>
-            </div>
-
-            <div class="card col-md-5 mr-3">
-                <h4 class="text-center pt-2">Todays Total Orders</h4>
-                <h1 class="text-center" style="color: #ad0003;">{{ total_orders }}</h1>
-            </div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-md-12 mt-5">
-                <table class="table table-hover table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Order ID</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Phone Number</th>
-                            <th scope="col">Street</th>
-                            <th scope="col">City</th>
-                            <th scope="col">Zip Code</th>
-                            <th scope="col">Is Paid?</th>
-                            <th scope="col">Details</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for order in orders %}
-                        <tr>
-                            <th scope="row">{{ order.pk }}</th>
-                            <td>{{ order.price }}</td>
-                            <td>{{ order.name }}</td>
-                            <td>{{ order.email }}</td>
-                            <td>{{ order.phone_number }}</td>
-                            <td>{{ order.street }}</td>
-                            <td>{{ order.city }}</td>
-                            <td>{{ order.zip_code }}</td>
-                            <td>
-                                {% if order.is_paid %}
-                                <i style="color: green;" class="fas fa-check"></i>
-                                {% else %}
-                                <i style="color: red;" class="fas fa-times"></i>
-                                {% endif %}
-                            </td>
-                            <td><a href="{% url 'order-details' order.pk %}"><i class="far fa-edit"></i></a></td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+<div class="container pt-5">
+    <div class="wrapper">
+        <div class="content-wrapper d-flex flex-column">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-primary py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Earnings
+                                                    (monthly)</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>$40,000</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Earnings
+                                                    (annual)</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>$215,000</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Today's
+                                                    Total Revenue</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>${{ total_revenue }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-danger fw-bold text-xs mb-1"><span>Today's
+                                                    Total Orders</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>{{ total_orders }}</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Table -->
+                    <div id="wrapper">
+                        <div id="content-wrapper" class="d-flex flex-column">
+                            <div id="content">
+                                <div class="container-fluid">
+                                    <div class="card shadow">
+                                        <div class="card-header py-3">
+                                            <p class="text-primary m-0 fw-bold">Order Info</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6 text-nowrap">
+                                                    <div id="dataTable_length" class="dataTables_length"
+                                                        aria-controls="dataTable">
+                                                        <label class="form-label">Show <select
+                                                                class="d-inline-block form-select form-select-sm">
+                                                                <option value="10" selected>10</option>
+                                                                <option value="25">25</option>
+                                                                <option value="50">50</option>
+                                                                <option value="100">100</option>
+                                                            </select></label></div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div id="dataTable_filter" class="text-md-end dataTables_filter">
+                                                        <label class="form-label"><input
+                                                                class="form-control form-control-sm" type="search"
+                                                                aria-controls="dataTable"
+                                                                placeholder="Search"></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive table mt-2" role="grid"
+                                                aria-describedby="dataTable_info">
+                                                <table id="dataTable" class="table my-0">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Order Id</th>
+                                                            <th>Price</th>
+                                                            <th>Name</th>
+                                                            <th>Email</th>
+                                                            <th>Street</th>
+                                                            <th>City</th>
+                                                            <th>Zip code</th>
+                                                            <th>Phone</th>
+                                                            <th>Is Paid?</th>
+                                                            <th>Details</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {% for order in orders %}
+                                                        <tr>
+                                                            <th>{{ order.pk }}</th>
+                                                            <td>{{ order.price }}</td>
+                                                            <td>{{ order.name }}</td>
+                                                            <td>{{ order.email }}</td>
+                                                            <td>{{ order.street }}</td>
+                                                            <td>{{ order.city }}</td>
+                                                            <td>{{ order.zip_code }}</td>
+                                                            <td>{{ order.phone }}</td>
+                                                            <td>
+                                                                {% if order.is_paid %}
+                                                                <i style="color: #20cc79;" class="fas fa-check"></i>
+                                                                {% else %}
+                                                                <i style="color: #ff5842;" class="fas fa-times"></i>
+                                                                {% endif %}
+                                                            </td>
+                                                            <td><a href="{% url 'order-details' order.pk %}"><i
+                                                                        class="fas fa-edit"></i></a></td>
+                                                        </tr>
+                                                        {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 align-self-center">
+                                                    <p id="dataTable_info" class="dataTables_info" role="status"
+                                                        aria-live="polite">
+                                                        Showing
+                                                        1 to 10 of 27</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <nav
+                                                        class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                                        <ul class="pagination">
+                                                            <li class="page-item disabled"><a class="page-link"
+                                                                    aria-label="Previous" href="#"><span
+                                                                        aria-hidden="true">«</span></a></li>
+                                                            <li class="page-item active"><a class="page-link"
+                                                                    href="#">1</a></li>
+                                                            <li class="page-item"><a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">3</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" aria-label="Next"
+                                                                    href="#"><span aria-hidden="true">»</span></a></li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Table -->
+                </div>
             </div>
         </div>
     </div>
-{% endblock %}
+</div>
+
+
+{% endblock content %}
