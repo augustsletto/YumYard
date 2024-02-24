@@ -72,24 +72,38 @@
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Products</h6>
+              <h6 class="text-uppercase fw-bold">For Restaurants</h6>
               <hr
                   class="mb-4 mt-0 d-inline-block mx-auto"
                   style="width: 60px; background-color: #7c4dff; height: 2px"
                   />
+                {% if user.is_authenticated %}
               <p>
-                <a href="#!" class="text-dark">MDBootstrap</a>
-              </p>
-              <p>
-                <a href="#!" class="text-dark">MDWordPress</a>
-              </p>
-              <p>
-                <a href="#!" class="text-dark">BrandFlow</a>
-              </p>
-              <p>
-                <a href="#!" class="text-dark">Bootstrap Angular</a>
-              </p>
+                <a class=" text-dark" data-url="{% url 'dashboard' %}">Dashboard</a>
+                </p>
+                <p class="nav-item">
+                <a class="text-dark nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                </p>
+                {% endif %}
+                {% if not user.is_authenticated %}
+                <p class="nav-item">
+                <a class="text-dark nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                </p>
+                {% endif %}
+              
             </div>
+
+            
+
+
+
+
+
+
+
+
+
+
             <!-- Grid column -->
   
             <!-- Grid column -->
@@ -101,16 +115,16 @@
                   style="width: 60px; background-color: #7c4dff; height: 2px"
                   />
               <p>
-                <a href="#!" class="text-dark">Restaurant Dashboard</a>
+                <a data-url="{% url 'restaurants' %}" href="#!" class="text-dark">Restaurants</a>
               </p>
               <p>
-                <a href="#!" class="text-dark">Connect your Restaurant</a>
+                <a data-url="{% url 'contact' %}" href="#" class="text-dark">Work with us</a>
               </p>
               <p>
-                <a href="#!" class="text-dark">About Us</a>
+                <a data-url="{% url 'about' %}" href="#!" class="text-dark">About Us</a>
               </p>
               <p>
-                <a href="#!" class="text-dark">Menu</a>
+                <a data-url="{% url 'contact' %}" href="#!" class="text-dark">Contact</a>
               </p>
             </div>
             <!-- Grid column -->
@@ -123,10 +137,11 @@
                   class="mb-4 mt-0 d-inline-block mx-auto"
                   style="width: 60px; background-color: #7c4dff; height: 2px"
                   />
-              <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-              <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+              <p><i class="fas fa-home mr-3"></i> 123 Main Street, 123 45, Dublin
+
+              </p>
+              <p><i class="fas fa-envelope mr-3"></i> contact@yum.com</p>
               <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-              <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
             </div>
             <!-- Grid column -->
           </div>
@@ -150,3 +165,44 @@
     <!-- Footer -->
   </div>
   <!-- End of .container -->
+
+  <script>
+    // JavaScript för att hantera klickhändelser
+    const navLinks = document.querySelectorAll('.nav-link');
+  
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Ta bort "active" klass från alla länkar
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+        });
+  
+        // Lägg till "active" klass till den klickade länken
+        this.classList.add('active');
+      });
+    });
+  </script>
+  
+  <script>
+      document.addEventListener('click', function(event) {
+          if (event.target.classList.contains('button', 'a')) {
+              var url = event.target.getAttribute('data-url');
+              if (url) {
+                  window.location.href = url;
+              }
+          }
+      });
+      
+  
+  
+    
+      document.addEventListener('click', function(event) {
+        const clickedElement = event.target;
+        const url = clickedElement.getAttribute('data-url');
+        
+        if (url) {
+            window.location.href = url;
+        }
+  });
+  
+  </script>

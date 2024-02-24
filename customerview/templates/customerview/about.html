@@ -1,31 +1,96 @@
 {% extends 'customerview/base.html' %}
 
 {% block content %}
-<div class="container mb-5">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
-            <h1>About Us</h1>
+<style>
+    /* Adjusted styles to match the provided page */
+    .about-section {
+        background-color: #f8f9fa;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+     h1 {
+        color: #279251;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .about-content h2 {
+        color: #000;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .about-content p {
+        color: #000000;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .about-content .highlight {
+        color: #279251;
+        font-weight: bold;
+    }
+</style>
+
+<section class="about-section">
+    <div class="container">
+        <h1 class="highlight">About Us</h1>
+        <div class="about-content">
+            <h1 class="highlight">Welcome to Yum!</h1>
+            <p>Discover the culinary wonders of Yum, where every bite tells a story and every meal is an adventure. At Yum, we're on a mission to redefine your dining experience, one delicious dish at a time.</p>
+
+            <h2 class="highlight">Our Journey:</h2>
+            <p>Yum was born from a shared love for extraordinary food and the desire to make it accessible to everyone, anytime, anywhere. We believe that food is not just nourishment for the body, but also nourishment for the soul.</p>
+
+            <h2 class="highlight">What Makes Us Special:</h2>
+            <p><span class="highlight">Exquisite Selection:</span> Indulge in a curated collection of culinary delights, meticulously selected from the finest restaurants and chefs in your area.</p>
+            <p><span class="highlight">Effortless Ordering:</span> Our user-friendly platform makes ordering your favorite meals a breeze. With just a few clicks, you can browse menus, customize your order, and sit back while we handle the rest.</p>
+            <p><span class="highlight">Quality Assurance:</span> We're committed to delivering excellence with every bite. Our partner restaurants adhere to strict standards of quality, freshness, and taste, ensuring that your dining experience is nothing short of exceptional.</p>
+            <p><span class="highlight">Personalized Service:</span> Your satisfaction is our priority. Whether you have dietary preferences, special requests, or simply need assistance, our dedicated team is here to ensure that every aspect of your experience is tailored to your needs.</p>
+            <p><span class="highlight">Community-Centric Approach:</span> Beyond food, Yum is about fostering connections and building community. Join us in celebrating the joy of good food and shared experiences.</p>
+
+            <p>Join the Yum family today and embark on a gastronomic journey unlike any other. Whether you're craving comfort classics, exploring exotic flavors, or seeking healthier options, Yum has something to tantalize your taste buds.</p>
+
+            <p>Thank you for choosing Yum – where every meal is a celebration!</p>
         </div>
     </div>
-    <div class="row justify-content-center mt-1">
-        <div class="card col-md-10 col-sm-12 offset-md-1 p-4 text-center">
-            <h1>Welcome to Yum!</h1>
-        <p>Discover the culinary wonders of Yum, where every bite tells a story and every meal is an adventure. At Yum, we're on a mission to redefine your dining experience, one delicious dish at a time.</p>
+    <section class="about-section">
+        <div class="container">
+            <h1 class="highlight">FAQ</h1>
+            <div class="about-content">
+                <h2 class="highlight">How do I place an order?</h2>
+                <p>To place an order, simply follow these steps:</p>
+                <ol>
+                    <li>Log in to your account or sign up if you're a new user.</li>
+                    <li>Browse through our selection of restaurants and choose your desired items.</li>
+                    <li>Add the items to your cart and proceed to checkout.</li>
+                    <li>Enter your delivery address and payment information.</li>
+                    <li>Review your order and confirm it.</li>
+                    <li>Once your order is confirmed, sit back and relax while we prepare and deliver your delicious meal!</li>
+                </ol>
 
-        <h2>Our Journey:</h2>
-        <p>Yum was born from a shared love for extraordinary food and the desire to make it accessible to everyone, anytime, anywhere. We believe that food is not just nourishment for the body, but also nourishment for the soul.</p>
+                <h2 class="highlight">What payment methods do you accept?</h2>
+                <p>We accept all major credit cards, including Visa, Mastercard, and American Express. We also offer PayPal and cash on delivery as alternative payment options.</p>
 
-        <h2>What Makes Us Special:</h2>
-        <p><span class="highlight">Exquisite Selection:</span> Indulge in a curated collection of culinary delights, meticulously selected from the finest restaurants and chefs in your area.</p>
-        <p><span class="highlight">Effortless Ordering:</span> Our user-friendly platform makes ordering your favorite meals a breeze. With just a few clicks, you can browse menus, customize your order, and sit back while we handle the rest.</p>
-        <p><span class="highlight">Quality Assurance:</span> We're committed to delivering excellence with every bite. Our partner restaurants adhere to strict standards of quality, freshness, and taste, ensuring that your dining experience is nothing short of exceptional.</p>
-        <p><span class="highlight">Personalized Service:</span> Your satisfaction is our priority. Whether you have dietary preferences, special requests, or simply need assistance, our dedicated team is here to ensure that every aspect of your experience is tailored to your needs.</p>
-        <p><span class="highlight">Community-Centric Approach:</span> Beyond food, Yum is about fostering connections and building community. Join us in celebrating the joy of good food and shared experiences.</p>
-
-        <p>Join the Yum family today and embark on a gastronomic journey unlike any other. Whether you're craving comfort classics, exploring exotic flavors, or seeking healthier options, Yum has something to tantalize your taste buds.</p>
-
-        <p>Thank you for choosing Yum – where every meal is a celebration!</p>
+                <h2 class="highlight">Is delivery available in my area?</h2>
+                <p>We strive to provide delivery services to as many areas as possible. To check if delivery is available in your area, simply enter your address during checkout. If delivery is unavailable, you can always opt for pickup or explore other nearby restaurants.</p>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
+</section>
+
 {% endblock content %}
