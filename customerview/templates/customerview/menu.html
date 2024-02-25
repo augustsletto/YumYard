@@ -1,5 +1,5 @@
 {% extends 'customerview/base.html' %}
-{% load media %}
+{% load static %}
 
 {% block content %}
 <div class="container">
@@ -23,7 +23,7 @@
         <div class="col-md-4 col-sm-12 text-center mb-5">
 
             {% if "placeholder" in item.image.url %}
-            <img class="card-img-top" src="{% media 'menu_images/BLT.jpg' %}"
+            <img class="card-img-top" src="{% static 'menu_images/BLT.jpg' %}"
                 alt="placeholder image">
             {% else %}
             <img class="card-img-top" src=" {{ item.image.url }}"
