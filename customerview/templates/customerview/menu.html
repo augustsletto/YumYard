@@ -23,11 +23,11 @@
         <div class="col-md-4 col-sm-12 text-center mb-5">
 
             {% if "placeholder" in item.image.url %}
-            <img class="card-img-top" src="{% item.image.url %}"
+            <img class="card-img-top" src="{% media 'menu_images/BLT.jpg' %}"
                 alt="placeholder image">
             {% else %}
             <img class="card-img-top" src=" {{ item.image.url }}"
-                alt="{{ post.title }}">
+                alt="{{ item.name }}">
             {% endif %}
 
             <!-- <img class="rounded" src="{{ item.image.url }}" width="350" height="300" alt=""> -->
