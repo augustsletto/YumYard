@@ -1,9 +1,7 @@
 {% extends 'restaurantview/base.html' %}
 
 {% block content %}
-<div class="ms-5">
-    <a href="{% url 'dashboard' %}"><i class="fas fa-arrow-left pt-3 ml-5"> Go Back</i></a>
-</div>
+
 <div class="container pt-3">
     <div class="card">
         <div class="card-body">
@@ -19,7 +17,7 @@
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit" class="btn btn-primary btn-rounded" value="Submit">Add Menu Item</button>
+                    <button type="submit" class="order-button" value="Submit">Add Menu Item</button>
                 </form>
             </div>
         </div>

@@ -1,12 +1,21 @@
 {% extends 'restaurantview/base.html' %}
 
 {% block content %}
-<div class="ms-5">
-    <a href="{% url 'edit-menu' %}"><i class="fas fa-arrow-left pt-3 ml-5"> Go Back</i></a>
-</div>
+
+    <style>
+        .card-body a, h3{
+            color: #279251;
+        }
+
+        .active{
+            border-bottom: none;
+        }
+    </style>
+
 <div class="container pt-3">
     <div class="card">
         <div class="card-body">
+            <a href="{% url 'edit-menu' %}">Go Back</a>
             <h3 class="card-title text-center">Edit Items</h3>
             {% if messages %}
             {% for message in messages %}
@@ -19,7 +28,7 @@
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" class="btn btn-primary btn-rounded" value="Update Item">
+                    <input type="submit" class="order-button value="Update Item">
                 </form>
             </div>
         </div>

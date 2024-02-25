@@ -119,11 +119,14 @@
   </style>
 </head>
 <body>
-
+  {% if user.is_authenticated %}
 <div class="navbarbot navbar pt-0 pb-0 pl-5">
   
-  <a data-url="{% url 'restaurants' %}" class="nav-link ml-5 mr-5">Add to Menu</a>
-  <a data-url="{% url 'menu' %}" class="nav-link mr-auto">Edit Menu</a>
+  <a data-url="{% url 'add-menu' %}" class="nav-link ml-5 mr-5">Add to Menu</a>
+  <a data-url="{% url 'edit-menu' %}" class="nav-link mr-auto">Edit Menu</a>
+  {% endif %}
+
+  
 </div>
 
 
