@@ -4,7 +4,6 @@
 
 
 
-
 <div class="container pt-5">
     <div class="wrapper">
         <div class="content-wrapper d-flex flex-column">
@@ -16,9 +15,8 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-primary fw-bold text-xs mb-1"><span>Earnings
-                                                    (monthly)</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>$40,000</span></div>
+                                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Monthly Goal</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>$50,000.00</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
                                     </div>
@@ -30,9 +28,8 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Earnings
-                                                    (annual)</span></div>
-                                            <div class="text-dark fw-bold h5 mb-0"><span>$215,000</span></div>
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>This Month So far</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0"><span>$23,473.00</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                         </div>
@@ -45,8 +42,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Today's
-                                                    Total Revenue</span></div>
+                                            <div class="text-uppercase text-warning fw-bold text-xs mb-1"><span>Today's Revenue</span></div>
                                             <div class="text-dark fw-bold h5 mb-0"><span>${{ total_revenue }}</span>
                                             </div>
                                         </div>
@@ -61,8 +57,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col me-2">
-                                            <div class="text-uppercase text-danger fw-bold text-xs mb-1"><span>Today's
-                                                    Total Orders</span></div>
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Today's Orders</span></div>
                                             <div class="text-dark fw-bold h5 mb-0"><span>{{ total_orders }}</span></div>
                                         </div>
                                         <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -79,7 +74,7 @@
                                 <div class="container-fluid">
                                     <div class="card shadow">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">Order Info</p>
+                                            <p style="color:#279251;" class="m-0 fw-bold">Order Info</p>
                                         </div>
                                         <div class="card-body">
                                             <div class="row">
@@ -94,13 +89,7 @@
                                                                 <option value="100">100</option>
                                                             </select></label></div>
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div id="dataTable_filter" class="text-md-end dataTables_filter">
-                                                        <label class="form-label"><input
-                                                                class="form-control form-control-sm" type="search"
-                                                                aria-controls="dataTable"
-                                                                placeholder="Search"></label></div>
-                                                </div>
+                                                
                                             </div>
                                             <div class="table-responsive table mt-2" role="grid"
                                                 aria-describedby="dataTable_info">
@@ -148,25 +137,26 @@
                                                 <div class="col-md-6 align-self-center">
                                                     <p id="dataTable_info" class="dataTables_info" role="status"
                                                         aria-live="polite">
-                                                        Showing
-                                                        1 to 10 of 27</p>
+                                                        Showing active orders</p>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <nav
                                                         class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                                        <ul class="pagination">
-                                                            <li class="page-item disabled"><a class="page-link"
-                                                                    aria-label="Previous" href="#"><span
-                                                                        aria-hidden="true">«</span></a></li>
-                                                            <li class="page-item active"><a class="page-link"
-                                                                    href="#">1</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">2</a>
-                                                            </li>
-                                                            <li class="page-item"><a class="page-link" href="#">3</a>
-                                                            </li>
-                                                            <li class="page-item"><a class="page-link" aria-label="Next"
-                                                                    href="#"><span aria-hidden="true">»</span></a></li>
-                                                        </ul>
+                                                        <nav aria-label="...">
+                                                            <ul class="pagination">
+                                                              <li class="page-item disabled">
+                                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                                              </li>
+                                                              <li class="page-item disabled"><a class="page-link" href="#">1</a></li>
+                                                              <li class="page-item disabled">
+                                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                                              </li>
+                                                              <li class="page-item disabled"><a class="page-link" href="#">3</a></li>
+                                                              <li class="page-item disabled">
+                                                                <a class="page-link" href="#">Next</a>
+                                                              </li>
+                                                            </ul>
+                                                          </nav>
                                                     </nav>
                                                 </div>
                                             </div>
