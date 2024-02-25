@@ -21,21 +21,21 @@
     <div class="row justify-content-center">
         {% for item in menu_items %}
         <div class="col-md-4 col-sm-12 text-center mb-5">
-            <img class="rounded" src="{{ item.image.url }}" width="350" height="300" alt="">
+
+            {% if "placeholder" in post.featured_image.url %}
+            <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                alt="placeholder image">
+            {% else %}
+            <img class="card-img-top" src=" {{ post.image.url }}"
+                alt="{{ post.title }}">
+            {% endif %}
+
+            <!-- <img class="rounded" src="{{ item.image.url }}" width="350" height="300" alt=""> -->
             <h5 class="mt-3">{{ item.name }}</h5>
             <p>Price: {{ item.price }}</p>
             <p>{{ item.description }}</p>
         </div>
         {% endfor %}
     </div>
-
-    {% if "placeholder" in post.featured_image.url %}
-    <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-      alt="placeholder image">
-    {% else %}
-    <img class="card-img-top" src=" {{ post.featured_image.url }}"
-      alt="{{ post.title }}">
-    {% endif %}
-
 </div>
 {% endblock content %}
