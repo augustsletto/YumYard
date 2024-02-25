@@ -1,5 +1,6 @@
 from django.db import models
 from django import forms
+from cloudinary.models import CloudinaryField
 
 
 
@@ -17,6 +18,7 @@ class MenuItem(models.Model):
     image = models.ImageField(upload_to='menu_images/')
     price = models.DecimalField(max_digits=5, decimal_places=2)
     category = models.ManyToManyField('Category', related_name='item')
+    featured_image = CloudinaryField('image', default='placeholder')
     restaurant = models.ManyToManyField(
         'Restaurant', related_name='restaurant')
 
