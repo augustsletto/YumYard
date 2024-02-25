@@ -15,6 +15,7 @@ class Restaurant(models.Model):
 class MenuItem(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+
     image = CloudinaryField('image', default='placeholder')
     price = models.DecimalField(max_digits=5, decimal_places=2)
     category = models.ManyToManyField('Category', related_name='item')
