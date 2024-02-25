@@ -6,7 +6,9 @@
         {% for restaurant in restaurants %}
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow">
-                <img src="/media/restaurantlogos/LOGOdefault.jpg" class="card-img-top" alt="{{ restaurant.name }}">
+                <img class="card-img-top" src=" {{ item.image.url }}"
+                    alt="{{ item.name }}">
+                <!--<img src="/media/restaurantlogos/LOGOdefault.jpg" class="card-img-top" alt="{{ restaurant.name }}">-->
                 <div class="card-body">
                     <h5 class="card-title">{{ restaurant.name }}</h5>
                     <div class="rating">
