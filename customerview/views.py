@@ -2,6 +2,7 @@ import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.views import View
+from django.urls import reverse
 from django.db.models import Q
 from django.core.mail import send_mail
 from .models import MenuItem, Category, OrderModel, Restaurant
@@ -25,7 +26,7 @@ def contact(request):
             send_mail(cd['subject'], cd['message'], cd.get(
                 'email', 'noreply@example.com'), ['contact@yum.com'])
 
-        return HttpResponseRedirect('/contact?submitted=True')
+        return HttpResponseRedirect(reverse('contact') + '?submitted=True')
     else:
         form = ContactForm()
         if 'submitted' in request.GET:
