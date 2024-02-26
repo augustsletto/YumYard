@@ -8,13 +8,14 @@
             <p>Craving your favorite meal? No matter where it's from, just place your order and leave the rest to us. We're here to ensure your dining desires are met, seamlessly delivering the taste you love right to your doorstep. Sit back, relax, and get ready to enjoy – we've got everything covered.</p>
         </div>
     </div>
+    <!-- Row to display restaurants dynamically -->
     <div class="row">
         {% for restaurant in restaurants %}
         <div class="col-md-4 mb-4">
             <div class="card h-100 shadow">
                 <img class="card-img-top" src="https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708899918/jcicjzcojdguliequsdw.webp"
                     alt="{{ item.name }}">
-                <!--<img src="/media/restaurantlogos/LOGOdefault.jpg" class="card-img-top" alt="{{ restaurant.name }}">-->
+
                 <div class="card-body">
                     <h5 class="card-title">{{ restaurant.name }}</h5>
                     <div class="rating">

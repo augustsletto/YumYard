@@ -23,6 +23,8 @@
                 <div class="pt-5">
                     <h1 style="color:#279251;">Order</h1>
                     <p>Mixing it up for mealtime? No sweat! Choose from different menus, all in one order. We'll take care of the rest, making sure your cravings are satisfied hassle-free. Say goodbye to the hassle of juggling multiple orders and hello to easy, diverse dining!</p>
+                    <!-- Repeats the section for all categories like Sandwiches, Salads, etc. -->
+                    <!-- Each section includes a heading, iterates through items, and displays them -->
                     <h3 class="mt-5">Appetizers</h3>
                     {% for app in appetizers %}
                     <div class="row">
@@ -261,13 +263,11 @@
                     </div>
                 </div>
 
-                <!-- Button trigger modal -->
+
                 <button type="button" class="btn btn-green" data-toggle="modal" data-target="#submitModal">
                     Submit Order!
                 </button>
 
-                <!--<button class="btn btn-dark mt-5">Place Order!</button> -->
-                <!-- Modal -->
                 <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">

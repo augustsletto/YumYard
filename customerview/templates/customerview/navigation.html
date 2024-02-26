@@ -58,15 +58,17 @@
 
 </style>
 
-
+<!-- Navigation bar with dynamic content based on user authentication -->
 <nav class="navbar navbar-expand-lg navbar-dark pl-5 pr-5" style="background-color: #279251;">
   <a class="navbar-brand" href="{% url 'index' %}">
       <img src="https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708904378/dcppuxqoq8hrmmw1nlj6.png" alt="Yum logo" height="35px">
   </a>
+  <!-- Navbar toggle for smaller screens -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
+  <!-- Navigation items -->
   <div class="collapse navbar-collapse" id="navbarNav">
     <div class="navbar-text ml-auto d-none d-lg-block">
       <p class="mb-0">
@@ -112,13 +114,10 @@
                   <i class="fas fa-shopping-cart" style="color: #ffffff; font-size: 22px;"></i>
               </a>
           </li>
-          <!-- Place an order link remains in the larger navbar -->
-          
       </ul>
   </div>
-  <!-- Visit us at remains visible only on larger screens -->
-  
 </nav>
+<!-- Additional navigation for larger screens -->
 <div class="navbar navbarbot navbar-dark pt-0 pb-0 pl-5 d-none d-lg-flex">
   <a data-url="{% url 'restaurants' %}" class="nav-link ml-5 mr-5">Restaurants</a>
   <a data-url="{% url 'menu' %}" class="nav-link mr-5">Menu</a>
@@ -126,55 +125,51 @@
 </div>
 
 
+<style>
 
+.navbarbot {
+  background-color: #ffffff;
+  overflow: hidden;
+}
 
-
-
-  <style>
-    /* CSS för att styla navbar och effekter */
-    .navbarbot {
-      background-color: #ffffff;
-      overflow: hidden;
-    }
-
-    .navbarbot a {
-      float: left; /* Change float to left */
-      display: block;
-      color: #279251;
-      text-align: left;
-      padding: 14px 20px;
-      text-decoration: none;
-      transition: border-bottom 0.3s ease;
-      border-bottom: 4px solid transparent;
+.navbarbot a {
+  float: left; 
+  display: block;
+  color: #279251;
+  text-align: left;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: border-bottom 0.3s ease;
+  border-bottom: 4px solid transparent;
 }
 
 
-    .navbarbot a:hover {
-      border-bottom: 4px solid #279251;
-      
-    }
+.navbarbot a:hover {
+  border-bottom: 4px solid #279251;
+  
+}
 
-    .active {
-      border-bottom: 4px solid #279251;
-    }
-  </style>
+.active {
+  border-bottom: 4px solid #279251;
+}
+</style>
 </head>
 <body>
 
 
 
 <script>
-  // JavaScript för att hantera klickhändelser
+  
   const navLinks = document.querySelectorAll('.nav-link');
 
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
-      // Ta bort "active" klass från alla länkar
+      
       navLinks.forEach(link => {
         link.classList.remove('active');
       });
 
-      // Lägg till "active" klass till den klickade länken
+      
       this.classList.add('active');
     });
   });

@@ -23,7 +23,7 @@ class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
             if not order.is_shipped:
                 unshipped_orders.append(order)
 
-        # pass total number of orders and total revenue into template
+        # pass number of orders and revenue to template
         context = {
             'orders': unshipped_orders,
             'total_revenue': total_revenue,
@@ -65,7 +65,7 @@ class OrderDetails(LoginRequiredMixin, UserPassesTestMixin, View):
 
 
 
-# Add restaurant items to menu
+# Add items to menu
 class AddMenu(LoginRequiredMixin, UserPassesTestMixin, View):
     def get(self, request, *args, **kwargs):
         form = MenuForm
@@ -96,7 +96,7 @@ class AddMenu(LoginRequiredMixin, UserPassesTestMixin, View):
         return self.request.user.groups.filter(name='Staff').exists()
 
 
-# Edit restaurant menu
+# Edit menu
 class EditMenu(LoginRequiredMixin, UserPassesTestMixin, View):
     def get(self, request, *args, **kwargs):
         menu_items = MenuItem.objects.all().order_by('-id')
@@ -111,9 +111,7 @@ class EditMenu(LoginRequiredMixin, UserPassesTestMixin, View):
         return self.request.user.groups.filter(name='Staff').exists()
 
 
-# Edit item in menu
-# Follow along with Codemy.com
-# https://www.youtube.com/watch?v=jCM-m_3Ysqk&t=793s
+
 def edit_item(request, item_id):
     item = MenuItem.objects.get(pk=item_id)
     form = MenuForm(request.POST or None, instance=item)
@@ -129,9 +127,7 @@ def edit_item(request, item_id):
     return render(request, 'restaurantview/edit-item.html', context)
 
 
-# Delete item in menu
-# Follow along with codemy.com
-# https://www.youtube.com/watch?v=u1j-_kDc6g0&t=343s
+
 def delete_item(request, pk):
     item = MenuItem.objects.get(pk=pk)
     item.delete()

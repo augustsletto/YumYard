@@ -1,79 +1,81 @@
 {% extends 'customerview/base.html' %}
 
 {% block content %}
+<!-- Styling for buttons, hero section, and featured restaurants -->
 <style>
-    
-    .button {
-        position: relative;
-        display: inline-block;
-        margin: 10px;
-        padding: 6px 15px;
-        text-align: center;
-        font-size: 14px;
-        letter-spacing: 1px;
-        text-decoration: none;
-        color: #279251;
-        cursor: pointer;
-        transition: ease-out 0.5s;
-        border: 2px solid #279251;
-        border-radius: 15px;
-        box-shadow: inset 0 0 0 0 #279251;
-        }
-
-    .button:hover {
-        color: rgb(255, 255, 255);
-        box-shadow: inset 0 -100px 0 0 #279251;
-        }
-
-    .button:active {
-        transform: scale(0.9);
-        }
-
-    .order-button {
-        position: relative;
-        display: inline-block;
-        margin: 10px;
-        padding: 6px 15px;
-        text-align: center;
-        font-size: 14px;
-        letter-spacing: 1px;
-        text-decoration: none;
-        color: #ffffff;
-        background: #279251; /* Green Background */
-        cursor: pointer;
-        transition: ease-out 0.5s;
-        border: 2px solid #279251; /* Green Border */
-        border-radius: 15px;
-        box-shadow: inset 0 0 0 0 #279251;
-        }
-
-
-
-    .hero-section {
-        background-color: #f8f9fa;
-        padding: 100px 0;
-        text-align: center;
-    }
-
-    .hero-section h1 {
-        color: #ffffff;
-        font-size: 48px;
-        font-weight: bold;
-    }
-
-    .hero-section p {
-        color: #ffffff;
-        font-size: 20px;
-        margin-bottom: 40px;
-    }
-
-    
-
-    .hero-section {
+    /* Button styling */
+.button {
     position: relative;
-    background: url('https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708965093/fhoctvvwklw0zzcnaawe.png') center center no-repeat;
-    background-size: cover;
-    height: 400px; /* Adjust the height as needed */
+    display: inline-block;
+    margin: 10px;
+    padding: 6px 15px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #279251;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #279251;
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 0 #279251;
+    }
+/* Hover effect for button */
+.button:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0 -100px 0 0 #279251;
+    }
+/* Active state for button */
+.button:active {
+    transform: scale(0.9);
+    }
+/* Specific styling for order-button variant */
+.order-button {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    padding: 6px 15px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #279251; 
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #279251; 
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 0 #279251;
+    }
+
+
+/* Hero section styling with background image */
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Hero content styling for positioning and typography */
+.hero-section h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+
+
+.hero-section {
+position: relative;
+background: url('https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708965093/fhoctvvwklw0zzcnaawe.png') center center no-repeat;
+background-size: cover;
+height: 400px; 
 }
 
 .hero-content {
@@ -84,9 +86,9 @@
     transform: translate(-50%, -50%);
     text-align: center;
     color: rgb(255, 255, 255);
-    width: 80%; /* Adjust the width as needed */
+    width: 80%; 
 }
-
+/* General element styling for headings, paragraphs, and sections */
 .hero-content h1 {
     font-size: 36px;
     margin-bottom: 20px;
@@ -158,86 +160,84 @@ button:hover, a.button:hover {
 
 
 
-    /* Anpassade stilar för att matcha Foodoras design */
-    .hero-section {
-        background-color: #ffffff;
-        padding: 100px 0;
-        text-align: center;
-    }
 
-    .hero-section h1 {
-        color: #ffffff;
-        font-size: 48px;
-        font-weight: bold;
-    }
+.hero-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+}
 
-    .hero-section p {
-        color: #ffffff;
-        font-size: 28px;
-        margin-bottom: 40px;
-        font-family: 'Open Sans' sans-serif;
-    }
+.hero-section h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: bold;
+}
 
-    .featured-restaurants {
-        background-color: #fff;
-        padding: 100px 0;
-    }
+.hero-section p {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-family: 'Open Sans' sans-serif;
+}
 
-    .restaurant-card {
-        border: 1px solid #dee2e6;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
+.featured-restaurants {
+    background-color: #fff;
+    padding: 100px 0;
+}
 
-    .restaurant-card:hover {
-        transform: translateY(-5px);
-    }
+.restaurant-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
 
-    .restaurant-card img {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        height: 200px;
-        object-fit: cover;
-    }
+.restaurant-card:hover {
+    transform: translateY(-5px);
+}
 
-    .restaurant-card .card-body {
-        padding: 20px;
-    }
+.restaurant-card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
 
-    .restaurant-card h3 {
-        color: #000;
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
+.restaurant-card .card-body {
+    padding: 20px;
+}
 
-    .restaurant-card p {
-        color: #6c757d;
-        font-size: 16px;
-    }
+.restaurant-card h3 {
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.restaurant-card p {
+    color: #6c757d;
+    font-size: 16px;
+}
 
 
     
 </style>
-
+<!-- Hero section with call to action -->
 <div class="hero-section">
     <div class="hero-content pt-1 mt-5">
-        
-        
         <p class="open-sans">Order from your favorite restaurants and enjoy delicious meals delivered to your doorstep.</p>
         <a href="{% url 'order' %}" class="button">Order Now</a>
     </div>
 </div>
-
-
-
+<!-- Featured restaurants section explaining the service workflow -->
 <div class="featured-restaurants">
     <div class="container">
         <h2 class="mb-4">So how does it work?</h2>
         <p>Welcome to our innovative food delivery app, where convenience meets variety! Say goodbye to the hassle of choosing from individual restaurant menus. With us, you can effortlessly mix and match your favorite meals, whether it's pizza, sushi, or anything in between, all in one seamless order. Our unique combined menu feature lets you customize your meal experience without the limitations of a single restaurant's offerings.</p><p> Simply browse our extensive menu, select the dishes you're craving, and place your order. Our team will handle the rest, ensuring your deliciously diverse meal is delivered directly to you in no time. Enjoy the ultimate in dining convenience and variety with us!</p>
         <div class="row">
+            <!-- Individual restaurant cards with images and descriptions -->
             <div class="col-md-4 mb-4">
                 <div class="card restaurant-card">
+                    <!-- Image and content for each card -->
                     <img src="https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708899841/z7yxztocw4acm1izk6gi.jpg" class="card-img-top" alt="ordering image">
                     <div class="card-body">
                         <h3>Browse the Menu</h3>
@@ -264,7 +264,6 @@ button:hover, a.button:hover {
                     <div class="card-body">
                         <h3>Wait and enjoy</h3>
                         <p>Order placed? Check. Payment done? Check. Now, just sit tight and get ready to enjoy your meal.</p>
-                        
                     </div>
                 </div>
             </div>

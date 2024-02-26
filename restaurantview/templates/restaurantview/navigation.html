@@ -100,11 +100,11 @@
             <a class="nav-link {% if request.path == logout_url %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
           </li>
           {% endif %}
-          <!-- Place an order link remains in the larger navbar -->
+
           
       </ul>
   </div>
-  <!-- Visit us at remains visible only on larger screens -->
+
   
 </nav>
 {% if user.is_authenticated %}

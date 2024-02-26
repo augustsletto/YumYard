@@ -2,7 +2,7 @@
 
 {% block content %}
 <style>
-    /* Adjusted styles to match the provided page */
+    /* Custom style block for contact page styling */
     .contact-section {
         background-color: #f8f9fa;
         padding: 100px 0;
@@ -29,22 +29,22 @@
         margin-bottom: 20px;
         border: 1px solid #ced4da;
         border-radius: 5px;
-        box-sizing: border-box;
+        box-sizing: border-box; /* Ensures padding does not affect the final computed width of an element */
     }
 
     .contact-form textarea {
-        height: 150px;
+        height: 150px; /* Sets a fixed height for textarea */
     }
 
     .contact-form input[type="submit"] {
         width: 100%;
         padding: 10px;
-        background-color: #279251;
+        background-color: #279251; /* Primary button color */
         color: #fff;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
     }
 
     .active {
@@ -52,20 +52,21 @@
     }
 
     .contact-form input[type="submit"]:hover {
-        background-color: #1e6c3e;
+        background-color: #1e6c3e; /* Darker shade for hover effect */
     }
 </style>
-
+<!-- Main contact section with form -->
 <section class="contact-section pt-5 mt-0">
     <div class="container">
         <h2 style="color:#279251">Contact Us</h2>
         <div class="contact-form">
+            <!-- Conditional display based on whether the form was submitted -->
             {% if submitted %}
             <p class="success">Your message was submitted successfully. Thank you.</p>
             {% else %}
             <form method="POST" novalidate>
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form.as_p }} <!-- Renders form fields as paragraph elements -->
                 <input type="submit" value="Submit">
             </form>
             {% endif %}
