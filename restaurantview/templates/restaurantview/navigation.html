@@ -1,3 +1,4 @@
+<head>
 <style>
 
  
@@ -50,9 +51,36 @@
   box-shadow: 0px 25px 41px -22px rgba(0,0,0,0.75);
 }
 
+/* CSS för att styla navbar och effekter */
+.navbarbot {
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.navbarbot a {
+  float: left; /* Change float to left */
+  display: block;
+  color: #279251;
+  text-align: left;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: border-bottom 0.3s ease;
+  border-bottom: 4px solid transparent;
+}
+
+
+.navbarbot a:hover {
+  border-bottom: 4px solid #279251;
+  
+}
+
+.active {
+  border-bottom: 4px solid #279251;
+}
+
 
 </style>
-
+</head>
 
 <nav class="navbar navbar-expand-lg navbar-dark pl-5 pr-5" style="background-color: #279251;">
   <a class="navbar-brand" href="{% url 'index' %}">
@@ -113,42 +141,6 @@
   <a data-url="{% url 'edit-menu' %}" class="nav-link mr-5">Edit Menu</a>
 </div>
 {% endif %}
-
-
-
-
-
-
-  <style>
-    /* CSS för att styla navbar och effekter */
-    .navbarbot {
-      background-color: #ffffff;
-      overflow: hidden;
-    }
-
-    .navbarbot a {
-      float: left; /* Change float to left */
-      display: block;
-      color: #279251;
-      text-align: left;
-      padding: 14px 20px;
-      text-decoration: none;
-      transition: border-bottom 0.3s ease;
-      border-bottom: 4px solid transparent;
-}
-
-
-    .navbarbot a:hover {
-      border-bottom: 4px solid #279251;
-      
-    }
-
-    .active {
-      border-bottom: 4px solid #279251;
-    }
-  </style>
-</head>
-<body>
 
 
 
