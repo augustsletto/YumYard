@@ -198,7 +198,13 @@ Watch as new restaurant partners are added to our platform, expanding the culina
 
 
 
-Inspired by the principles of minimalism, Yum's website design embodies simplicity, cleanliness, and efficiency. The choice of green as our primary color reflects our commitment to offering an experience that symbolizes health, vitality, and affordability. We believe that good design should not only be visually appealing but also enhance usability, making it easier for you to enjoy your favorite meals without any distractions.
+Inspired by the principles of minimalism, Yum's website design embodies simplicity, cleanliness, and efficiency. The choice of green(#27925) as our primary color reflects our commitment to offering an experience that symbolizes health, vitality, and affordability. We believe that good design should not only be visually appealing but also enhance usability, making it easier for you to enjoy your favorite meals without any distractions.
+
+Font used:
+font-family: 'Open Sans', sans-serif;
+('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap')
+
+
 
 ## Technologies Used
 
