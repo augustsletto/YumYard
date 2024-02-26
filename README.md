@@ -203,15 +203,25 @@ Inspired by the principles of minimalism, Yum's website design embodies simplici
 ## Technologies Used
 
 [Django](https://www.djangoproject.com/) - as the web framework
+
 [dj_database_url](https://pypi.org/project/dj-database-url/) - for database configuration
+
 [Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - for authentication, including social accounts
+
 [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - for form layouts
+
 [Crispy Bootstrap4](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html#bootstrap-4) - for Bootstrap 4 integration with Crispy Forms
+
 [Cloudinary](https://cloudinary.com/documentation) - for media storage solutions
+
 [Cloudinary Storage](https://github.com/cloudinary/pycloudinary) - for integrating Cloudinary with Django's static and media files
+
 [Django Summernote](https://github.com/summernote/django-summernote) - for rich text editing
+
 [Whitenoise](http://whitenoise.evans.io/en/stable/) - for static file management in production
+
 [ElephantSQL](https://www.elephantsql.com/) - for managed PostgreSQL database services
+
 
 
 Django's built-in libraries for:
