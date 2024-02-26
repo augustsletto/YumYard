@@ -193,7 +193,7 @@ Restaurants view detailed order confirmations, including customer and order deta
 
 #### Admin Adding Restaurants
 Watch as new restaurant partners are added to our platform, expanding the culinary choices for our users.
-![Admin page adding restaurant owner](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972050/readme/zi2bibz8h7dyqd62aikf.gif)
+![Admin page adding restaurant owner](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708985354/readme/br37rilxya1b9aacbxqj.gif)
 
 #### Mobile-Responsive Design
 A GIF showcasing the mobile-responsive design of a website as viewed on a phone.
