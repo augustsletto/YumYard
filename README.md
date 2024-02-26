@@ -48,10 +48,49 @@ Yum is more than just a food delivery service; it's a culinary adventure that br
 Include screenshots, videos, or GIFs to showcase the platform's functionality and design.
 
 - ![Yum Homepage](URL-for-screenshot-1)
-- ![How to Order](URL-for-screenshot-2)
-- ![Order Tracking Feature](URL-for-screenshot-3)
-- ![GIF of Seamless Ordering Process](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972063/readme/rrqkzywkzuias6jsh6mu.gif)
-- ![GIF of Diverse Cuisine Selection](URL-for-GIF-2)
+- ![Yum Homepage](URL-for-screenshot-1)
+- ![Yum Homepage](URL-for-screenshot-1)
+- 
+- ![Contact Us](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/umb4bayzcflro8faontg.jpg)
+- ![Edit Items in Menu](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/mvlby4kmoxpkjhg7clpw.jpg)
+- ![Edit Menu Overview]([URL-for-screenshot-3](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/vkznd8hxeauzsqdhaea0.jpg))
+- ![Contact Mail](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972052/readme/ubppxgcrsocxbn94cnai.jpg)
+- ![Index Landing Page](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972052/readme/ftgalw21upnelhyekpn4.jpg)
+- ![Footer - Logged in](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972052/readme/jmv0eftpraiz0afwnpfh.jpg)
+- ![Footer - Logged out](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/f3dwbh4wxli73sjpg8ms.jpg)
+- ![How does it work - Index](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972052/readme/tymnfv2itsq4lvgvsyzn.jpg)
+- ![Navigation Bar Customer](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972052/readme/fn0olhb05a7xs0e7bytm.jpg)
+- ![Navigation Bar Restaurant Owner]([URL-for-screenshot-3](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972053/readme/eyey6q9viulyldc3u23b.jpg))
+- ![Submit Order Confirmation](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972053/readme/rfy8tfx4x757zqjefuip.jpg)
+- ![Order Confirmation with Payment & time since order](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972053/readme/bekyvkoga4z9kg9c6vtg.jpg)
+- ![Dashboard - Customer information](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972054/readme/sfge8plauxrrnceqkgfa.jpg)
+- ![Dashboard - Order shipped](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972054/readme/agwess1xno8emdr9qkns.jpg)
+- ![Dashboard - Restaurant Owner](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972054/readme/mrpfzsqxkiqn9elgtabo.jpg)
+- ![Menu Customer Information Form](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972054/readme/xkxxikexy4sqactf9jxj.jpg)
+- ![Place an Order](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972054/readme/vuok1rf4koxgsis3hiar.jpg)
+- ![Sign Up Closed](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972049/readme/ukm51asjympqjm7omxwz.jpg)
+- ![Add Items To Menu](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972050/readme/voslcrnrsxojn1gep8vm.jpg)
+- ![Menu Items Category](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972050/readme/f50u5flzcfvon0h7zesh.jpg)
+- ![Contact Confirmation](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972050/readme/vavxwohtsufximdajhi7.jpg)
+- ![Sign In](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972050/readme/lr4ln8eigjnpgx713zwd.jpg)
+
+- ![Heroku Deploy](http://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972059/readme/fq8hq9uuoygtcfjlcwhq.gif)
+- ![Our Restaurants](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972059/readme/redbc3rwqfoxydlehakz.gif)
+- ![Menu](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972063/readme/rrqkzywkzuias6jsh6mu.gif)
+- ![Order with Confirmation](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972057/readme/ut6u4lus6m2h9m5n6e85.gif)
+- ![Payment Confirmation](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972059/readme/sfxcsdve5nv4vgxxj7rj.gif)
+- ![Contact Confirmation](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972057/readme/pdmzohf5tvzck4afj7ym.gif)
+- ![Contact Confirmation 2](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972060/readme/o6hqwy0zauzmd2von3u3.gif)
+- ![Restaurant owner login](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972049/readme/fcni280niaova6abd9a3.gif)
+- ![Edit items on menu](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972050/readme/u9u6irgyiqlx0nnxuive.gif)
+- ![Dashboard remove item from menu](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972049/readme/ol3rtzxasjeqg9orxym3.gif)
+- ![Dashboard order shipped](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972048/readme/ha5zreo6v6qhulwbtau9.gif)
+- ![Admin page adding restaurant owner](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972050/readme/zi2bibz8h7dyqd62aikf.gif)
+
+
+- ![Bug](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/a20i4ntazibcighouj79.jpg)
+- ![Bug fix 1/2](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972053/readme/pwm9q7h2cacrn7yhmvml.gif)
+- ![Bug fix 2/2](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/euwa8fux1vadclfeal1w.gif)
 
 Inspired by the principles of minimalism, Yum's website design embodies simplicity, cleanliness, and efficiency. The choice of green as our primary color reflects our commitment to offering an experience that symbolizes health, vitality, and affordability. We believe that good design should not only be visually appealing but also enhance usability, making it easier for you to enjoy your favorite meals without any distractions.
 
