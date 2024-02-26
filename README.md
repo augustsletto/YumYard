@@ -1,5 +1,21 @@
 # Yum
 
+
+## Developer's Note
+
+Over the course of this project, I've dedicated approximately 70 hours of work, as tracked by Gitpod. This journey has been an immense learning experience for me. Throughout the development process, I've gained valuable knowledge and skills that have significantly enhanced my understanding and capabilities in software development. There have been numerous "aha" moments where complex concepts suddenly became clear, marking significant milestones in my learning journey.
+
+Despite my efforts and the progress made, the project remains incomplete at this time. My commitment to delivering a fully realized version of this project remains unwavering. For personal reasons and to ensure that I do not interfere with the project's deadline, I plan to continue its development in a separate repository post-assessment.
+
+This project has been more than just a task; it's been a pivotal stage in my development journey, reinforcing my passion for coding and pushing the boundaries of my knowledge and skills. The experience of bringing this project to life, despite the challenges and the learning curve, has been incredibly rewarding.
+
+Looking ahead, I am excited to apply the insights gained from this experience to future projects. The journey of improvement and discovery is far from over, and I eagerly anticipate the next chapter of development, armed with a stronger foundation and a clearer vision for what I can achieve.
+
+Thank you for taking the time to explore this project. Stay tuned for future updates as I continue to refine and expand upon this work.
+
+
+
+
 ## Table of Contents
 
 - [Project Description](#project-description)
@@ -14,6 +30,7 @@
 - [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
+- [User Stories](#user-stories)
 - [License](#license)
 - [Contact](#contact)
 - [Acknowledgments](#acknowledgments)
@@ -27,23 +44,15 @@ Yum revolutionizes the way users order food online by allowing them to combine d
 
 Yum is more than just a food delivery service; it's a culinary adventure that brings the best of local restaurants right to your doorstep. Whether you're craving sushi, pizza, or a mix of different cuisines, Yum makes it possible in one order.
 
-## Features 1
 
-- Multi-Restaurant Orders
-- Real-Time Order Tracking
-- Diverse Cuisine Selection
-- Customizable Orders
-- Secure Online Payments
-- User Profile Management
-
-## Features 2
+## Features 
 
 - **Multi-Restaurant Orders**: Say goodbye to the complication of ordering from different places. With Yum, you can combine dishes from various restaurants into one single order. Perfect for satisfying diverse tastes and dietary preferences in groups or personal indulgences.
 - **Real-Time Menu Updates**: Restaurants partnered with Yum can directly manage their menus on our platform. Add new dishes, update prices, or modify existing items and see the changes reflected immediately to the customers.
 - **Seamless Ordering and Payment Options**: Place your order with just a few clicks and opt for the payment method that suits you best. Pay conveniently online via PayPal or choose cash on delivery for those who prefer traditional payment methods.
 - **Restaurant Partnership and Contact Forms**: A dedicated section for restaurant owners interested in joining Yum and for job seekers looking to be part of our growing team. Our platform is designed to connect, expand, and foster a community around great food.
 
-## Visuals/Design Philosophy
+## Visuals
 
 ### Landing Page
 Welcome to our homepage! Here, we warmly welcome our customers and provide a comprehensive overview of our platform's offerings. Discover the ease and convenience of ordering your favorite dishes with just a few clicks.
@@ -207,17 +216,33 @@ Inspired by the principles of minimalism, Yum's website design embodies simplici
 
 ## Technologies Used
 
-- Django
-- Python
-- HTML/CSS/JavaScript
-- Bootstrap
-- Cloudinary for media storage
+[Django](https://www.djangoproject.com/) - as the web framework
+[dj_database_url](https://pypi.org/project/dj-database-url/) - for database configuration
+[Django Allauth](https://django-allauth.readthedocs.io/en/latest/index.html) - for authentication, including social accounts
+[Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - for form layouts
+[Crispy Bootstrap4](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html#bootstrap-4) - for Bootstrap 4 integration with Crispy Forms
+[Cloudinary](https://cloudinary.com/documentation) - for media storage solutions
+[Cloudinary Storage](https://github.com/cloudinary/pycloudinary) - for integrating Cloudinary with Django's static and media files
+[Django Summernote](https://github.com/summernote/django-summernote) - for rich text editing
+[Whitenoise](http://whitenoise.evans.io/en/stable/) - for static file management in production
+[ElephantSQL](https://www.elephantsql.com/) - for managed PostgreSQL database services
+
+
+Django's built-in libraries for:
+[admin](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/)
+[auth](https://docs.djangoproject.com/en/4.2/topics/auth/)
+[contenttypes](https://docs.djangoproject.com/en/4.2/ref/contrib/contenttypes/)
+[sessions](https://docs.djangoproject.com/en/4.2/topics/http/sessions/)
+[messages](https://docs.djangoproject.com/en/4.2/ref/contrib/messages/)
+[staticfiles](https://docs.djangoproject.com/en/4.2/howto/static-files/)
+[sites](https://docs.djangoproject.com/en/4.2/ref/contrib/sites/)
+
 
 ## Built With
 
-- [Django](https://www.djangoproject.com/) - The web framework used
-- [Cloudinary](https://cloudinary.com/) - Media Management
-- [Bootstrap](https://getbootstrap.com/) - Frontend Framework
+[Django](https://www.djangoproject.com/) - The web framework used
+[Cloudinary](https://cloudinary.com/) - Media Management
+[Bootstrap](https://getbootstrap.com/) - Frontend Framework
 
 ## Getting Started
 
@@ -237,9 +262,38 @@ Inspired by the principles of minimalism, Yum's website design embodies simplici
 4. Run the development server:
    `python manage.py runserver`
 
-## Usage
+### Bugs
 
-Use Yum to explore restaurants, create orders from multiple establishments, and track your delivery in real-time. Ideal for group orders, party planning, or satisfying diverse food cravings.
+
+
+
+
+
+## Bugs and Fixes
+
+### Contact Form Bug and Resolution
+
+**Issue**: A late development stage introduced an unexpected issue with the contact form, which had been functioning correctly until then. 
+![Bug](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/a20i4ntazibcighouj79.jpg)
+**Solution**: After thorough investigation, the fix was implemented and demonstrated through a series of GIFs, which visually guide through the corrective steps taken to resolve the issue. These GIFs are instrumental in understanding both the problem and its resolution.
+![Bug fix 1/2](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972053/readme/pwm9q7h2cacrn7yhmvml.gif)
+![Bug fix 2/2](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/euwa8fux1vadclfeal1w.gif)
+
+
+### Zip Code Input Bug
+
+**Issue**: A bug was identified where entering a space in the zip code field causes an error. This field is  set as an `IntegerField`, leading to input validation issues when user uses spacebar in the field.
+![Bug ZipCode](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708978621/readme/bugs/cklegtxjpdn8cuxzjgbg.jpg)
+![Bug Zip1](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708978621/readme/bugs/d99icf45w7lqw7fjw1vy.jpg)
+**Solution**: Due to time constraints, this bug remains unresolved. It is documented here for future attention and corrective action by developer or contributing community members.
+
+### Login/Logout Display Bug in Add Menu Page
+
+**Issue**: An unexpected bug was observed where login and logout logs were incorrectly displayed on the add menu page, potentially confusing users.
+![Bug Add Menu](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708978621/readme/bugs/p0i88gacuihwvg5lyevf.jpg)
+**Solution**: Due to time constraints, this bug remains unresolved, but the section is under review for a fix. The issue has been acknowledged, and efforts are underway to isolate and address the underlying cause to enhance user experience and interface clarity.
+
+
 
 ## Roadmap
 
@@ -249,10 +303,78 @@ Future enhancements will include:
 - Loyalty programs for frequent users
 - Expansion to new cities and regions
 - Enhanced recommendation algorithms
+- Active cart system allowing user to leave website and save chosen menu items for future order.
 
 ## Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+## User Stories
+
+### Browsing and Ordering
+- **AC1:** Search functionality for dishes or restaurants is implemented. `Successful`
+- **AC2:** Filters for cuisine type, price range, or dietary restrictions are available. `Successful`
+- **AC3:** Detailed dish information, including ingredients and allergens, is visible. `Successful`
+
+### Cart and Checkout
+- **AC1:** Single-click item addition to cart. `Successful`
+- **AC2:** Item removal is possible; however, adjusting the quantity of a single item is not. `Partially Successful`
+- **AC3:** Checkout process with secure payment and delivery info entry. `Successful`
+
+### User Account Management
+- **AC1:** Updating profile information feature is not implemented. `Unsuccessful`
+- **AC2:** Viewing order history and easy reordering are not available. `Unsuccessful`
+- **AC3:** Password and communication preferences update feature not implemented. `Unsuccessful`
+
+### Interaction and Feedback
+- **AC1:** Rating restaurants feature will be added later. `Unsuccessful`
+- **AC2:** Detailed review posting including comments and photos will be added later. `Unsuccessful`
+- **AC3:** Viewing aggregate ratings and reviews for decisions. `Successful`
+
+### Profile and Menu Management (Restaurant Owner)
+- **AC1:** Uploading photos and descriptions of the restaurant. `Successful`
+- **AC2:** Updating menu items, prices, and availability easily. `Successful`
+- **AC3:** Setting special offers or promotions. `Successful`
+
+### Order Processing (Restaurant Owner)
+- **AC1:** Real-time order notification system is partially implemented. `Partially Successful`
+- **AC2:** Managing pending orders through a dashboard. `Successful`
+- **AC3:** Marking orders with statuses like "in progress" and "completed." `Successful`
+
+### Customer Interaction (Restaurant Owner)
+- **AC1:** Responding to customer reviews and ratings through the contact form. `Successful`
+- **AC2:** Direct communication with customers via contact form and email. `Partially Successful`
+- **AC3:** Providing order updates to customers. `Successful`
+
+### Dietary Preferences and Filters
+- **AC1:** Specifying and searching for dietary preferences in dish descriptions. `Successful`
+- **AC2:** No direct toggle for dietary requirements; relies on search functionality. `Needs Improvement`
+- **AC3:** Detailed ingredient lists and allergen information are provided. `Successful`
+
+### Real-Time Order Tracking
+- **AC1:** Order status updates including confirmation and preparation. `Successful`
+- **AC2:** Tracking delivery driver location not implemented. `Unsuccessful`
+- **AC3:** Notifications for out-for-delivery and delivery completion not implemented. `Unsuccessful`
+
+### Social Sharing and Referral
+- **AC1:** No direct sharing functionality for dishes or restaurants, but social media links are present. `Needs Improvement`
+- **AC2:** No rewards or discounts for referrals. `Unsuccessful`
+- **AC3:** Daily order tracking is available. `Successful`
+
+### Business Analytics and Insights (Restaurant Owner)
+- **AC1:** Viewing sales data like revenue and order volume. `Successful`
+- **AC2:** Tracking customer demographics and preferences. `Successful`
+- **AC3:** Recommendations for menu or promotions optimization not provided. `Unsuccessful`
+
+### Event Hosting and Catering (Restaurant Owner)
+- **AC1:** Customizable catering packages or event menus can be created. `Successful`
+- **AC2:** Direct inquiries for event or catering services. `Successful`
+- **AC3:** Managing event bookings and logistics coordination. `Successful`
+
+*Loyalty Programs:* Not implemented.
+
+This overview reflects the current state of user story implementation in the project. Some areas have been successfully addressed, while others require further development or are planned for future updates.
+
 
 ## License
 
