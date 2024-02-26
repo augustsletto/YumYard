@@ -198,20 +198,6 @@ Watch as new restaurant partners are added to our platform, expanding the culina
 
 
 
-
-
-
-
-
-
-
-
-
-
-- ![Bug](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/a20i4ntazibcighouj79.jpg)
-- ![Bug fix 1/2](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972053/readme/pwm9q7h2cacrn7yhmvml.gif)
-- ![Bug fix 2/2](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972051/readme/euwa8fux1vadclfeal1w.gif)
-
 Inspired by the principles of minimalism, Yum's website design embodies simplicity, cleanliness, and efficiency. The choice of green as our primary color reflects our commitment to offering an experience that symbolizes health, vitality, and affordability. We believe that good design should not only be visually appealing but also enhance usability, making it easier for you to enjoy your favorite meals without any distractions.
 
 ## Technologies Used
