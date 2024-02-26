@@ -24,7 +24,7 @@ Inspired by the principles of minimalism, Yum's website design embodies simplici
 
 Whether you're a food lover, a restaurant owner, or someone looking to explore career opportunities, Yum is the place for you. Dive into a world of culinary delights and seamless ordering today. Let's make every meal memorable.
 
-For more information, visit our website [Insert Website URL here] or contact us through our online form for any inquiries.
+For more information, visit our website (https://yumyard-c6b5e0b36994.herokuapp.com/) or contact us through our online form for any inquiries.
 
 ---
 
