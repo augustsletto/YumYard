@@ -1,106 +1,345 @@
 {% extends 'customerview/base.html' %}
 
 {% block content %}
-<div class="container mb-5">
-    <div class="row justify-content-center mt-1">
-        <div class="col-md-5 col-sm-12 p-4 text-center">
-            <h1>Order Submitted!</h1>
-            <p>Thank you for your order! Your request has been received and is now being processed. If you prefer not to pay with PayPal, simply disregard the payment instructions, and you'll have the option to pay with cash upon delivery. <hr>We'll keep you updated on the status of your order. If you have any questions or concerns, feel free to reach out to our customer support team. We appreciate your business!</p>
-            <a href="{% url 'index' %}">Go to the homepage</a>
-        </div>
-    </div>
+<style>
+  /* Update styles to match the theme */
+  .confirmation-message {
+    background-color: #f5f5f5;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
 
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-5 col-sm-12 text-center">
-            <h3 class="pb-3">Order Summary:</h3>
-            {% for item in items.all %}
-                <p>{{ item.name }} <span class="pl-3">{{ item.price }}</span></p>
-            {% endfor %}
+  .confirmation-title {
+    color: #ff6f61; /* Foodora's red color */
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
 
-            <p class="font-weight-bold pt-4">Total: {{ price }}</p>
+  .confirmation-text {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 15px;
+  }
+
+  .order-summary {
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .order-summary-title {
+    color: #ff6f61;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .order-item {
+    margin-bottom: 10px;
+  }
+
+  .order-summary-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+
+  .total-price {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #444;
+  }
+
+  .payment-options {
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .payment-title {
+    color: #ff6f61;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .payment-text {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+
+  .btn-primary {
+    background-color: #ff6f61;
+    border-color: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #e2574c;
+    border-color: #e2574c;
+  }
+
+  .gradient-custom {
+/* fallback for old browsers */
+background: #1d8f12;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to top left, rgb(156, 242, 163, 1), rgb(243, 255, 245, 1));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to top left, rgb(147, 189, 149, 1), rgb(153, 231, 153, 1))
+}
+
+.card-header{
+  color:#279251;
+}
+
+.card-header > h5{
+  color: black;
+}
+
+</style>
+
+
+
+
+<section class="h-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-10 col-xl-8">
+        <div class="card" style="border-radius: 10px;">
+          <div class="card-header px-4 py-5">
+            <h5 class="text mb-0 ">Thank you for your Order!</h5>
+          </div>
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <p class="lead fw-normal mb-0" style="color: #279251;">Receipt</p>
+              <p class="small text-muted mb-0">Receipt Voucher : 1KAU9-84UIL</p>
+            </div>
+            
+            <div class="card shadow-0 border mb-4">
+              <div class="card-body">
+                {% for item in items.all %}
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src="{{ item.image.url }}"
+                      class="img-fluid" alt="{{ item.name }}">
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0">{{ item.name }}</p>
+                  </div>
+                  
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small"></p>
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small">Qty: 1</p>
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small">${{ item.price }}</p>
+                  </div>
+                </div>
+                {% endfor %}
+                <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
+                <div class="row d-flex align-items-center">
+                  <div class="col-md-2">
+                    <p class="text-muted mb-0 small">Track Order</p>
+                  </div>
+                  <div class="col-md-10">
+                    <div class="progress" style="height: 6px; border-radius: 16px;">
+                      <div class="progress-bar" role="progressbar"
+                        style="width: 65%; border-radius: 16px; background-color: #279251;" aria-valuenow="65"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="d-flex justify-content-around mb-1">
+                      <p class="text-muted mt-1 mb-0 small ms-xl-5">Out for delivery</p>
+                      <p class="confirmation-text pt-1" id="countdown"></span>
+                      <p class="text-muted mt-1 mb-0 small ms-xl-5">Delivered</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+
+            <div class="d-flex justify-content-between pt-2">
+              <p class="fw-bold mb-0">Order Details</p>
+              <p class="text-muted mb-0"><span class="fw-bold me-4">Total </span>${{ price }}</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p class="text-muted mb-0" id="currentDateTime"></p>
+              
+            </div>
+
+            <div class="d-flex justify-content-between mb-5">
+              <p class="text-muted mb-0">Voucher : FREE-DELIVERY</p>
+              <p class="text-muted mb-0"><span class="fw-bold me-4">Delivery Charges:</span> Free</p>
+            </div>
+          </div>
+          <div class="card-footer border-0 px-4 py-5 text-white text-center"
+          style="background-color: #ffffff; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+          <p class="text-muted mb-4">If you wish to pay with PayPal, please click the button below</p>
+          <div id="paypal-button"></div>
+          <p class="text-muted mt-2">If you prefer to pay with cash upon delivery, simply wait for our delivery team to arrive!</p>
         </div>
-    </div>
-    <div class="row justify-content-center pb-2 pt-5">
-        <div class="col-md-6 text-center">
-            <h3>Pay Now or Pay With Cash At Delivery</h3>
+
         </div>
+      </div>
     </div>
-    <div class="row justify-content-center pb-5">
-        <div class="col-md-6 text-center">
-            <div id="paypal-button"></div>
-        </div>
-    </div>
-</div>
+  </div>
+</section>
+
+
+
 
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script>
-
-
-
 function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      // Does this cookie string begin with the name we want?
+      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
     }
-    return cookieValue;
+  }
+  return cookieValue;
 }
 const csrftoken = getCookie('csrftoken');
 
-  paypal.Button.render({
-    // Configure environment
-    env: 'sandbox',
-    client: {
-      sandbox: 'AV3qBTLlwWMwK82HOvqInjlhNXL6LX7-QSe7OYQEpVGvcUl16afIFCz7tVbgaLUbw9yzAIh_QVLGCoCC',
-      production: 'demo_production_client_id'
-    },
-    // Customize button (optional)
-    locale: 'en_US',
-    style: {
-      size: 'large',
-      color: 'blue',
-      shape: 'rect',
-    },
+paypal.Button.render({
+  // Configure environment
+  env: 'sandbox',
+  client: {
+    sandbox: 'AV3qBTLlwWMwK82HOvqInjlhNXL6LX7-QSe7OYQEpVGvcUl16afIFCz7tVbgaLUbw9yzAIh_QVLGCoCC',
+    production: 'demo_production_client_id'
+  },
+  // Customize button (optional)
+  locale: 'en_US',
+  style: {
+    size: 'large',
+    color: 'black',
+    shape: 'rect',
+  },
+  // Enable Pay Now checkout flow (optional)
+  commit: true,
+  // Set up a payment
+  payment: function(data, actions) {
+    return actions.payment.create({
+      transactions: [{
+        amount: {
+          total: '{{ price }}',
+          currency: 'USD'
+        }
+      }]
+    });
+  },
+  // Execute the payment
+  onAuthorize: function(data, actions) {
+    return actions.payment.execute().then(function() {
+      // Show a confirmation message to the buyer
+      $.ajax({
+        type: 'POST',
+        url: "{% url 'order-confirmation' pk %}",
+        beforeSend: function(request) {
+          request.setRequestHeader('X-CSRFToken', csrftoken)
+        },
+        data: JSON.stringify({'isPaid': true}),
+        success: function(data) {
+          window.location.href = '/payment-confirmation/'
+        }
+      })
+    });
+  }
+}, '#paypal-button');
 
-    // Enable Pay Now checkout flow (optional)
-    commit: true,
+// Set the target time to 45 minutes from now
+var targetTime = new Date();
+targetTime.setMinutes(targetTime.getMinutes() + 45);
 
-    // Set up a payment
-    payment: function(data, actions) {
-      return actions.payment.create({
-        transactions: [{
-          amount: {
-            total: '{{ price }}',
-            currency: 'USD'
-          }
-        }]
-      });
-    },
-    // Execute the payment
-    onAuthorize: function(data, actions) {
-      return actions.payment.execute().then(function() {
-        // Show a confirmation message to the buyer
-        $.ajax({
-            type: 'POST',
-            url: "{% url 'order-confirmation' pk %}",
-            beforeSend: function(request) {
-                request.setRequestHeader('X-CSRFToken', csrftoken)
-            },
-            data: JSON.stringify({'isPaid': true}),
-            success: function(data) {
-                window.location.href = '/payment-confirmation/'
-            }
-        })
-      });
-    }
-  }, '#paypal-button');
+// Update the countdown every second
+var countdownInterval = setInterval(function() {
+  // Get the current time
+  var currentTime = new Date().getTime();
+
+  // Calculate the remaining time
+  var distance = targetTime - currentTime;
+
+  // Calculate minutes and seconds
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the countdown in the element with id="countdown"
+  document.getElementById("countdown").innerHTML = "Time remaining: " + minutes + "m " + seconds + "s ";
+
+  // If the countdown is over, display a message
+  if (distance < 0) {
+    clearInterval(countdownInterval);
+    document.getElementById("countdown").innerHTML = "Countdown expired!";
+  }
+}, 1000); // Update every second (1000 milliseconds)
+
+
+  // Get the current date and time
+  var currentDate = new Date();
+
+  // Format the date and time as a string
+  var formattedDate = currentDate.toLocaleString();
+
+  // Display the formatted date and time in the HTML element
+  document.getElementById("currentDateTime").textContent = "Invoice Date:  " +  formattedDate;
+
 
 </script>
+
+<style>
+.confirmation-message {
+  border: 2px solid #279251;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+}
+.confirmation-title {
+  color: #279251;
+  font-size: 28px;
+}
+.confirmation-text {
+  font-size: 16px;
+  color: #444;
+}
+.countdown-container {
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #279251; /* Matching color theme */
+}
+</style>
 {% endblock content %}
