@@ -16,7 +16,6 @@ class Index(View):
 
 
 
-
 def contact(request):
     submitted = False
     if request.method == 'POST':
