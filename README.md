@@ -3,7 +3,7 @@
 
 ## Developer's Note
 
-Over the course of this project, I've dedicated approximately 70 hours of work, as tracked by Gitpod. This journey has been an immense learning experience for me. Throughout the development process, I've gained valuable knowledge and skills that have significantly enhanced my understanding and capabilities in software development. There have been numerous "aha" moments where complex concepts suddenly became clear, marking significant milestones in my learning journey.
+Over the course of this project, I've dedicated approximately 90 hours of work, as tracked by Gitpod. This journey has been an immense learning experience for me. Throughout the development process, I've gained valuable knowledge and skills that have significantly enhanced my understanding and capabilities in software development. There have been numerous "aha" moments where complex concepts suddenly became clear, marking significant milestones in my learning journey.
 
 Despite my efforts and the progress made, the project remains incomplete at this time. My commitment to delivering a fully realized version of this project remains unwavering. For personal reasons and to ensure that I do not interfere with the project's deadline, I plan to continue its development in a separate repository post-assessment.
 
