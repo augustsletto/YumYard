@@ -34,6 +34,7 @@ Thank you for taking the time to explore this project. Stay tuned for future upd
 - [License](#license)
 - [Contact](#contact)
 - [Acknowledgments](#acknowledgments)
+- [Deployment](#deployment)
 - [Conclusion](#conclusion)
 
 ## Project Description
@@ -292,12 +293,6 @@ Django's built-in libraries for:
 4. Run the development server:
    `python manage.py runserver`
 
-### Bugs
-
-
-
-
-
 
 ## Bugs and Fixes
 
@@ -408,11 +403,12 @@ This overview reflects the current state of user story implementation in the pro
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License.
 
 ## Contact
 
-Project Link: [https://github.com/augustsletto/YumYard](https://github.com/augustsletto/YumYard)
+For any inquiries, please feel free to reach out to me via email at [augustsletto@gmail.com](mailto:augustsletto@gmail.com).
+
 
 ## Acknowledgments
 
@@ -421,9 +417,74 @@ Project Link: [https://github.com/augustsletto/YumYard](https://github.com/augus
 - Bootstrap Team
 - All Contributors
 
+# Deployment
+
+## Forking the GitHub Repository
+
+To create a personal copy of the original repository on your GitHub account, allowing you to make changes without affecting the original repository, follow these steps:
+
+1. **Log in to GitHub** and locate the desired GitHub Repository.
+2. At the top of the Repository, just above the "Settings" button on the menu, find the **"Fork" Button**.
+3. Click the button to create a copy of the original repository in your GitHub account.
+
+## Making a Local Clone
+
+**Note**: It's required to have Python version 3.8 or higher installed locally for this project.
+
+1. **Log in to GitHub** and locate the GitHub Repository.
+2. Click **"Code"** under the repository name.
+3. To clone the repository using HTTPS, under "HTTPS", **copy the link**.
+4. Open your **local terminal** (with git installed).
+5. Change the current working directory to the location where you want the cloned directory.
+6. Type `git clone`, and then **paste the URL** you copied in Step 3.
+    ```bash
+    git clone https://github.com/augustsletto/YumYard.git
+    ```
+7. Press **Enter**. Your local clone will be created.
+
+8. Change the current working directory to the cloned project folder.
+9. It is recommended to use a virtual environment. Create a virtual environment in the project's working directory by entering `python3 -m venv .venv` in the terminal. Activate it with `source .venv/bin/activate`.
+10. Install the required packages using `pip install -r requirements.txt`.
+11. In the cloned directory, rename `.env-example` to `.env` and fill it with necessary values.
+12. Make Django migrations using `./manage.py migrate`.
+
+## Deploying with Heroku
+
+**Note**: For deployment to Heroku, having a Cloudinary account and an account with an email service for sending confirmations and notifications to users is a prerequisite.
+
+1. **Log in to Heroku** and navigate to your personal app dashboard.
+2. At the top of the page, find the **'New'** dropdown, click it, then select **'Create new app'**.
+3. Give your application a unique name, select a region appropriate to your location, and click **'Create app'**.
+4. Your app now created, select the **'Resources'** section from the menu.
+5. Search for **'Heroku Postgres'** under the Add-ons section and add it.
+6. Select the **'Settings'** section from the menu, click **'Reveal Config Vars'** and enter the following key/value pairs:
+    - `ALLOWED_HOSTS`: `<your_project_name>.herokuapp.com`
+    - `CLOUDINARY_URL`: Your Cloudinary API Environment variable.
+    - `EMAIL_HOST_PASSWORD`: The password provided by your email service.
+    - `EMAIL_HOST_USER`: The email address provided by your email service.
+    - `SECRET_KEY`: A complex string for cryptographic signing.
+7. Ensure the `DATABASE_URL` is automatically populated by Heroku.
+8. The `DATABASE_URL` should be copied into your local `.env`.
+
+### Running Migrations on the Remote Database
+
+1. Open your local terminal and change the directory to the project folder.
+2. Make Django migrations using `./manage.py migrate`.
+
+### Finalizing Deployment on Heroku
+
+1. Navigate to the **'Deploy'** page via the menu.
+2. Select **'GitHub'** as the deployment method and connect to GitHub.
+3. Search for and connect to your repository containing the `yumyard` project.
+4. Click **'Connect'**.
+5. In the 'Manual deploy' section, select the **'main'** branch, then click **'Deploy'**.
+6. Once deployment completes, click the **'View'** button to go to the deployed application.
+
+
+
 ## Conclusion
 
-Yum stands at the forefront of culinary innovation, offering a unique platform that caters to the diverse tastes and preferences of food lovers everywhere. Join us on this delicious journey as we continue to expand and enhance the Yum experience.
+Yum stands at the forefront of culinary innovation, offering a unique platform that caters to the diverse tastes and preferences of food lovers everywhere. Join me on this delicious journey as we continue to expand and enhance the Yum experience.
 
 ## Join Us
 
