@@ -1,62 +1,7 @@
 {% extends 'customerview/base.html' %}
 
 {% block content %}
-<head>
-<style>
-    /* Custom style block for contact page styling */
-    .contact-section {
-        background-color: #f8f9fa;
-        padding: 100px 0;
-        text-align: center;
-    }
 
-    .contact-section h2 {
-        color: #000;
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 40px;
-    }
-
-    .contact-form {
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    .contact-form input[type="text"],
-    .contact-form input[type="email"],
-    .contact-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ced4da;
-        border-radius: 5px;
-        box-sizing: border-box; /* Ensures padding does not affect the final computed width of an element */
-    }
-
-    .contact-form textarea {
-        height: 150px; /* Sets a fixed height for textarea */
-    }
-
-    .contact-form input[type="submit"] {
-        width: 100%;
-        padding: 10px;
-        background-color: #279251; /* Primary button color */
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s; /* Smooth transition for hover effect */
-    }
-
-    .active {
-        border-bottom: none;
-    }
-
-    .contact-form input[type="submit"]:hover {
-        background-color: #1e6c3e; /* Darker shade for hover effect */
-    }
-</style>
-</head>
 <!-- Main contact section with form -->
 <section class="contact-section pt-5 mt-0">
     <div class="container">

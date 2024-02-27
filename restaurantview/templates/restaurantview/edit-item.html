@@ -1,17 +1,7 @@
 {% extends 'restaurantview/base.html' %}
 
 {% block content %}
-<head>
-    <style>
-        .card-body a, h3{
-            color: #279251;
-        }
 
-        .active{
-            border-bottom: none;
-        }
-    </style>
-</head>
 
 <div class="container pt-3">
     <div class="card">
@@ -29,7 +19,7 @@
                 <form method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" class="order-button value="Update Item">
+                    <input type="submit" class="order-button" value="Update Item">
                 </form>
             </div>
         </div>

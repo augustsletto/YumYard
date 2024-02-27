@@ -1,19 +1,7 @@
 {% extends 'customerview/base.html' %}
 
 {% block content %}
-<head>
- <style>
 
-    h3, .form-check, .price{
-        color:#279251;
-    }
-
-    .active{
-        border-bottom: none;
-    }
-
- </style>
- </head>
 
 <div class="container mb-5">
     
@@ -31,7 +19,7 @@
                     {% for app in appetizers %}
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ app.image.url }}" width="150" height="100"/>
+                            <img class="rounded" src="{{ app.image.url }}" alt="appetizer" width="150" height="100"/>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -53,7 +41,7 @@
                     {% for sandwich in sandwiches %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ sandwich.image.url }}" width="150" height="100"/>
+                            <img class="rounded" src="{{ sandwich.image.url }}" alt="sandwich" width="150" height="100"/>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -75,7 +63,7 @@
                     {% for salad in salads %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ salad.image.url }}" width="150" height="100"/>
+                            <img class="rounded" src="{{ salad.image.url }}" alt="salad" width="150" height="100"/>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -97,7 +85,7 @@
                     {% for burger in burgers %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ burger.image.url }}" width="150" height="100"/>
+                            <img class="rounded" src="{{ burger.image.url }}" alt="burger" width="150" height="100"/>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -119,7 +107,7 @@
                     {% for sushi_item in sushi %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ sushi_item.image.url }}" width="150" height="100"/>
+                            <img class="rounded" src="{{ sushi_item.image.url }}" alt="sushi" width="150" height="100"/>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -141,7 +129,7 @@
                     {% for pasta_item in pasta %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ pasta_item.image.url }}" width="150" height="100"/>
+                            <img class="rounded" src="{{ pasta_item.image.url }}" alt="pasta" width="150" height="100"/>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -163,7 +151,7 @@
                     {% for pizza_item in pizza %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ pizza_item.image.url }}" width="150" height="100"/>
+                            <img class="rounded" src="{{ pizza_item.image.url }}" alt="pizza" width="150" height="100"/>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -188,7 +176,7 @@
                     {% for dessert in desserts %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ dessert.image.url }}" width="150" height="100"/>
+                            <img class="rounded" src="{{ dessert.image.url }}" alt="dessert" width="150" height="100"/>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -210,7 +198,7 @@
                     {% for drink in drinks %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
-                            <img class="rounded" src="{{ drink.image.url }}" width="150" height="100"/>
+                            <img class="rounded" src="{{ drink.image.url }}" alt="drink" width="150" height="100"/>
                         </div>
                         <div class="col-md-8 col-sm-12">
                             <div class="d-flex flex-row">
@@ -229,17 +217,17 @@
 
                 <div class="form-group pt-3">
                     <label for="name">Full Name</label>
-                    <input required class="form-control" type="text" placeholder="Your Name" name="name">
+                    <input required class="form-control" type="text" placeholder="Your Name" name="name" id="name">
                 </div>
 
                 <div class="form-group pt-3">
                     <label for="name">Email Address</label>
-                    <input required class="form-control" type="text" placeholder="example@example.com" name="email">
+                    <input required class="form-control" type="text" placeholder="example@example.com" name="email" id="email">
                 </div>
 
                 <div class="form-group pt-3">
                     <label for="name">Street Address</label>
-                    <input required class="form-control" type="text" placeholder="123 Main St" name="street">
+                    <input required class="form-control" type="text" placeholder="123 Main St" name="street" id="street">
                 </div>
 
                 <div class="row">
@@ -247,20 +235,20 @@
                 
                         <div class="form-group pt-3">
                             <label for="name">City</label>
-                            <input required class="form-control" type="text" placeholder="Dublin" name="city">
+                            <input required class="form-control" type="text" placeholder="Dublin" name="city" id="city">
                         </div>
                     </div>
 
                     <div class="col-md-4 col-sm-12">
                         <div class="form-group pt-3">
                             <label for="name">Phone Number</label>
-                            <input required class="form-control" type="text" placeholder="Phone" name="phone_number">
+                            <input required class="form-control" type="text" placeholder="Phone" name="phone_number" id="phone_number">
                         </div>
                     </div> 
                     <div class="col-md-4 col-sm-12">
                         <div class="form-group pt-3">
                             <label for="name">Zip Code</label>
-                            <input required class="form-control" type="text" placeholder="94117" name="zip">
+                            <input required class="form-control" type="text" placeholder="94117" name="zip" id="zip">
                         </div>
                     </div>
                 </div>

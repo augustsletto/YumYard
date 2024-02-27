@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap">
 
 <!-- Local CSS -->
-<link rel="stylesheet" href="{% static '/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
 <!-- Bootstrap core CSS -->
@@ -24,6 +24,436 @@
 * {
     font-family: 'Open Sans', sans-serif;
     }
+    
+
+    /* Main style block for custom page styling */
+    .about-section {
+        background-color: #f8f9fa;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+     h1 {
+        color: #279251;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .about-content h2 {
+        color: #000;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .about-content p {
+        color: #000000;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .about-content .highlight {
+        color: #279251;
+        font-weight: bold;
+    }
+
+
+ 
+
+  .button {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  padding: 6px 15px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #279251;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #279251;
+  border-radius: 15px;
+  box-shadow: inset 0 0 0 0 #279251;
+}
+
+.button:hover {
+  color: rgb(255, 255, 255);
+  box-shadow: inset 0 -100px 0 0 #279251;
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+.order-button {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  padding: 6px 15px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #ffffff;
+  background: #279251; /* Green Background */
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #279251; /* Green Border */
+  border-radius: 15px;
+  box-shadow: inset 0 0 0 0 #279251;
+}
+.navbar {
+  box-shadow: 0px 25px 41px -22px rgba(0,0,0,0.75);
+}
+
+ .navbarbot {
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.navbarbot a {
+  float: left; 
+  display: block;
+  color: #279251;
+  text-align: left;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: border-bottom 0.3s ease;
+  border-bottom: 4px solid transparent;
+}
+
+
+.navbarbot a:hover {
+  border-bottom: 4px solid #279251;
+  
+}
+
+.active {
+  border-bottom: 4px solid #279251;
+}
+
+
+    /* Custom style block for contact page styling */
+    .contact-section {
+        background-color: #f8f9fa;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .contact-section h2 {
+        color: #000;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+
+    .contact-form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        box-sizing: border-box; /* Ensures padding does not affect the final computed width of an element */
+    }
+
+    .contact-form textarea {
+        height: 150px; /* Sets a fixed height for textarea */
+    }
+
+    .contact-form input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #279251; /* Primary button color */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    .active {
+        border-bottom: none;
+    }
+
+    .contact-form input[type="submit"]:hover {
+        background-color: #1e6c3e; /* Darker shade for hover effect */
+    }
+
+
+
+    footer{
+        margin-top: 100px;
+    }
+        
+
+    /* Button styling */
+.button {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    padding: 6px 15px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #279251;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #279251;
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 0 #279251;
+    }
+/* Hover effect for button */
+.button:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0 -100px 0 0 #279251;
+    }
+/* Active state for button */
+.button:active {
+    transform: scale(0.9);
+    }
+/* Specific styling for order-button variant */
+.order-button {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    padding: 6px 15px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #279251; 
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #279251; 
+    border-radius: 15px;
+    box-shadow: inset 0 0 0 0 #279251;
+    }
+
+
+/* Hero section styling with background image */
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Hero content styling for positioning and typography */
+.hero-section h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+
+
+.hero-section {
+position: relative;
+background: url('https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708965093/fhoctvvwklw0zzcnaawe.png') center center no-repeat;
+background-size: cover;
+height: 400px; 
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 80%; 
+}
+/* General element styling for headings, paragraphs, and sections */
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-content .button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+a {
+    color: #279251;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button, a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #279251;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+button:hover, a.button:hover {
+    background-color: #1e6c3e;
+}
+
+
+
+
+
+.hero-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.featured-restaurants {
+    background-color: #fff;
+    padding: 100px 0;
+}
+
+.restaurant-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+}
+
+.restaurant-card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.restaurant-card .card-body {
+    padding: 20px;
+}
+
+.restaurant-card h3 {
+    color: #000;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.restaurant-card p {
+    color: #6c757d;
+    font-size: 16px;
+}
+
+
+
+
+    h3, .form-check, .price{
+        color:#279251;
+    }
+
+    .active{
+        border-bottom: none;
+    }
+
+    
+  /* Gradient background for the entire page */
+  .gradient-custom {
+background: #1d8f12;
+background: -webkit-linear-gradient(to top left, rgb(156, 242, 163, 1), rgb(243, 255, 245, 1));
+background: linear-gradient(to top left, rgb(147, 189, 149, 1), rgb(153, 231, 153, 1));
+}
+
+.card-header{
+  color:#279251;
+}
+
+.card-header > h5{
+  color: black;
+}
+
+.confirmation-text {
+  font-size: 16px;
+  color: #444;
+}
+
 
 </style>
 </head>
