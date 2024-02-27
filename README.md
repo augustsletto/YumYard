@@ -1,9 +1,9 @@
-# Yum
-
+# [Yum](https://yumyard-c6b5e0b36994.herokuapp.com/) 
+![Am I Responsive?](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708986765/readme/wfzbwlgiijkk9kwkup8p.jpg)
 
 ## Developer's Note
 
-Over the course of this project, I've dedicated approximately 70 hours of work, as tracked by Gitpod. This journey has been an immense learning experience for me. Throughout the development process, I've gained valuable knowledge and skills that have significantly enhanced my understanding and capabilities in software development. There have been numerous "aha" moments where complex concepts suddenly became clear, marking significant milestones in my learning journey.
+Over the course of this project, I've dedicated approximately 90 hours of work, as tracked by Gitpod. This journey has been an immense learning experience for me. Throughout the development process, I've gained valuable knowledge and skills that have significantly enhanced my understanding and capabilities in software development. There have been numerous "aha" moments where complex concepts suddenly became clear, marking significant milestones in my learning journey.
 
 Despite my efforts and the progress made, the project remains incomplete at this time. My commitment to delivering a fully realized version of this project remains unwavering. For personal reasons and to ensure that I do not interfere with the project's deadline, I plan to continue its development in a separate repository post-assessment.
 
@@ -21,13 +21,13 @@ Thank you for taking the time to explore this project. Stay tuned for future upd
 - [Project Description](#project-description)
 - [About the Project](#about-the-project)
 - [Features](#features)
+- [Testing](#testing)
 - [Visuals](#visuals)
 - [Technologies Used](#technologies-used)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [User Stories](#user-stories)
@@ -51,6 +51,28 @@ Yum is more than just a food delivery service; it's a culinary adventure that br
 - **Real-Time Menu Updates**: Restaurants partnered with Yum can directly manage their menus on our platform. Add new dishes, update prices, or modify existing items and see the changes reflected immediately to the customers.
 - **Seamless Ordering and Payment Options**: Place your order with just a few clicks and opt for the payment method that suits you best. Pay conveniently online via PayPal or choose cash on delivery for those who prefer traditional payment methods.
 - **Restaurant Partnership and Contact Forms**: A dedicated section for restaurant owners interested in joining Yum and for job seekers looking to be part of our growing team. Our platform is designed to connect, expand, and foster a community around great food.
+
+
+## Testing
+
+### Comprehensive Testing Completed Without Errors
+
+I am proud to report that comprehensive testing on the website has been successfully completed without any errors. This rigorous testing process was conducted using a two-pronged approach: manual testing by multiple reviewers and automated testing through various software tools.
+
+### Manual Testing
+
+- **Critical Review by Multiple Sources**: The website underwent extensive manual testing by several individuals whom I personally selected for their critical eye and attention to detail. I encouraged them to provide candid feedback and to scrutinize every aspect of the site's functionality, design, and content. This process ensured that the user experience is polished, intuitive, and free of any usability issues.
+
+### Automated Testing
+
+- **Software Validation**: In addition to manual reviews, the website was subjected to automated testing using a suite of software tools designed to detect errors, performance issues, and compliance with web standards. This ensures that the site meets high standards of quality and efficiency.
+
+The combination of detailed manual testing by experienced reviewers and comprehensive automated checks has confirmed the reliability, usability, and quality of the website. This dual approach guarantees that users will enjoy a seamless and error-free experience, reflecting our commitment to excellence in every aspect of our online presence.
+![CSS VALID](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708992779/readme/gjgpd8wvl5ku1ywxgpgu.jpg)
+![HTML VALID](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708992779/readme/x8qrb2iu6o2kyrc4mexc.jpg)
+
+
+
 
 ## Visuals
 
@@ -193,19 +215,21 @@ Restaurants view detailed order confirmations, including customer and order deta
 
 #### Admin Adding Restaurants
 Watch as new restaurant partners are added to our platform, expanding the culinary choices for our users.
-![Admin page adding restaurant owner]([https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708985354/readme/br37rilxya1b9aacbxqj.gif](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972050/readme/zi2bibz8h7dyqd62aikf.gif))
+![Admin page adding restaurant owner](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708972050/readme/zi2bibz8h7dyqd62aikf.gif)
 
 #### Mobile-Responsive Design
 A GIF showcasing the mobile-responsive design of a website as viewed on a phone.
-![Phone view gif](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708985354/readme/br37rilxya1b9aacbxqj.gif)
+![Phone View](https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708985354/readme/br37rilxya1b9aacbxqj.gif)
+https://res.cloudinary.com/dt4sw7qtl/image/upload/v1708985354/readme/br37rilxya1b9aacbxqj.gif
+
+
+
 
 
 Inspired by the principles of minimalism, Yum's website design embodies simplicity, cleanliness, and efficiency. The choice of green(#27925) as our primary color reflects our commitment to offering an experience that symbolizes health, vitality, and affordability. We believe that good design should not only be visually appealing but also enhance usability, making it easier for you to enjoy your favorite meals without any distractions.
 
 Font used:
-font-family: 'Open Sans', sans-serif;
-
-https://fonts.google.com/?query=open+sans
+[font-family: 'Open Sans', sans-serif;](https://fonts.google.com/?query=open+sans)
 
 
 
